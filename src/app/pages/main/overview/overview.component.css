@@ -1,0 +1,128 @@
+ * {
+    box-sizing: border-box;
+  } 
+  
+  .transaction-summary-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .transaction-summary-box {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    padding: 10px;
+    flex: 50%;
+    margin:10px;
+    height: 80px;
+    align-items: center;
+  }
+
+  .transaction-summary-box-text {
+      width: 75%;
+  }
+
+  .transaction-summary-box-text-label {
+      font-size: 14px;
+      color: #787C90;
+      text-align: left;
+  }
+
+  .transaction-summary-box-text-value {
+      text-align: left;
+      color: #262626;
+  }
+
+  .transaction-summary-box-chart {
+      width: 25%;
+      height: 37px; /** Must be same height transaction-summary-box-chart > img height **/
+  }
+
+  .transaction-summary-box-chart > img {
+      height: 37px; /** Must be same height transaction-summary-box-chart height**/
+      width: 62px;
+  }
+
+  .middle-chart-container {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    height: 250px;
+    margin:10px;
+  }
+  
+  .middle-chart-left {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 65%;
+  }
+
+  
+  .middle-chart-right {
+    display: flex;
+    flex-direction: column;
+    flex: 35%;
+  }
+
+  .middle-chart-right-top, .middle-chart-right-bottom {
+      background-color: #ffffff;
+      padding: 5px;
+      flex: 50%;
+      margin:3px;
+  }
+
+  .middle-chart-right-top {
+    margin-top: 0px !important;
+  }
+
+  .middle-chart-right-bottom {
+    margin-bottom: 0px !important;
+  }
+
+  .title, .text-item {
+      margin: 5px;
+      font-weight: 400;
+      color: #262626;
+  }
+
+  .title {
+      font-weight: bold;
+  }
+
+  .text-item-value-warning {
+      color:#FDC207 ;
+  }
+
+  .text-item-value-success {
+    color:#2DAE60 ;
+}
+
+.text-item-value-primary {
+    color:#1960EC ;
+}
+
+.text-item-value-warning, .text-item-value-success, .text-item-value-primary {
+    font-weight: bold;
+}
+
+  @media (max-width: 800px) {
+    .transaction-summary-container {
+      flex-direction: column;
+    }
+  }
+
+ 
+@media (max-width: 800px) {
+    .middle-chart-container {
+      flex-direction: column;
+    }
+    .middle-chart-left {
+      display: none;
+    }
+  }

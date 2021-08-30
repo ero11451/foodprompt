@@ -1,0 +1,16 @@
+<ng-container>
+    
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    
+    <mat-sidenav-container class="container">
+      <mat-sidenav #sidenav mode="side" opened class="sidenav">
+        <app-navigation></app-navigation>
+    </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  
+    <mat-toolbar class="footer">&copy; Transmonitor</mat-toolbar>
+  </ng-container>

@@ -1,0 +1,69 @@
+<div class="transaction-summary-container">
+    <div class="transaction-summary-box">
+        <span class="transaction-summary-box-text">
+            <div class="transaction-summary-box-text-label">Daily Transaction Volume</div>
+            <div class="transaction-summary-box-text-value">{{transHistory.dailyVolume | number : '1.0-0'}}</div>
+        </span>
+        <span class="transaction-summary-box-chart"><img src="assets/img/small-chart.png"></span>
+    </div>
+    
+    <div class="transaction-summary-box">
+        <span class="transaction-summary-box-text">
+            <div class="transaction-summary-box-text-label">Daily Transaction Value</div>
+            <div class="transaction-summary-box-text-value">N{{transHistory.dailyTotal | number : '1.0-0'}}</div>
+        </span>
+        <span class="transaction-summary-box-chart"><img src="assets/img/small-chart.png"></span>
+    </div>
+
+    <div class="transaction-summary-box">
+        <span class="transaction-summary-box-text">
+            <div class="transaction-summary-box-text-label">Total Transaction Volume</div>
+            <div class="transaction-summary-box-text-value">{{transHistory.totalVolume | number : '1.0-0'}}</div>
+        </span>
+        <span class="transaction-summary-box-chart"><img src="assets/img/small-chart.png"></span>
+    </div>
+
+    <div class="transaction-summary-box">
+        <span class="transaction-summary-box-text">
+            <div class="transaction-summary-box-text-label">Total Transaction Value</div>
+            <div class="transaction-summary-box-text-value">N{{transHistory.totalValue  | number : '1.0-0'}}</div>
+        </span>
+        <span class="transaction-summary-box-chart"><img src="assets/img/small-chart.png"></span>
+    </div>
+  </div>
+
+  <div class="middle-chart-container">
+    <div class="middle-chart-left mat-elevation-z8">
+        <div>
+        <google-chart #chart
+        [title]="title"
+        [type]="type"
+        [data]="data"
+        [options]="options">
+        </google-chart>
+        </div>
+        
+    </div>
+    <div class="middle-chart-right">
+        <div class="middle-chart-right-top">
+            <div class="title text-item">Orders</div>
+            <div>
+                <mat-progress-bar mode="determinate" value="{{(orderSummary.reconciled/orderSummary.total)*100}}"></mat-progress-bar>
+            </div>
+            <div class="text-item">Pending Orders: <span class="text-item-value-warning">{{orderSummary.pending}}</span></div>
+            <div class="text-item">Reconciled Orders: <span class="text-item-value-success">{{orderSummary.reconciled}}</span></div>
+            <div class="text-item">Total Orders: <span class="text-item-value-primary">{{orderSummary.total}}</span></div>
+        </div>
+        <div class="middle-chart-right-bottom">
+            <div class="title text-item">Payments</div>
+            <div>
+                <mat-progress-bar mode="determinate" value="{{(paymentSummary.reconciled/paymentSummary.total)*100}}"></mat-progress-bar>
+            </div>
+            <div class="text-item">Un-reconcile Payments: <span class="text-item-value-warning">{{paymentSummary.unreconciled}}</span></div>
+            <div class="text-item">Reconciled Payments: <span class="text-item-value-success">{{paymentSummary.reconciled}}</span></div>
+            <div class="text-item">Total Payments: <span class="text-item-value-primary">{{paymentSummary.total}}</span></div>
+        </div>
+    </div>
+  </div>
+
+  <app-all-payments></app-all-payments>

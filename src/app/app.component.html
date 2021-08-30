@@ -1,0 +1,26 @@
+<app-work-area *ngIf="loggedIn===true"></app-work-area>
+<div *ngIf="loggedIn!==true">
+    <section class="login-form">
+        <h1>Log In</h1>
+        <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value)">
+            <p>
+                <label>First Name:</label>
+                <input type="text"  
+                    [ngModel]="user.firstName" name="firstName" required>
+            </p>
+            <p>
+                <label>Password:</label>
+                <input type="password"  
+                    [(ngModel)]="user.password" name="password" required>
+            </p>
+            <p>
+                <button type="submit" [disabled]="!myForm.valid">Submit</button>
+            </p>
+        </form>
+
+       this.user: {{user | json}}
+        <br>
+        userObjectPassedOnSubmit: {{userObjectPassedOnSubmit | json}}
+
+    </section>
+</div>

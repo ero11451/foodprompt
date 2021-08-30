@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Open Sans", "Helvetica Neue", sans-serif; font-style: normal; font-weight: 300; }
+
+mat-progress-bar .mat-progress-bar-buffer {
+    background: #FDC207;
+}
+
+.mat-progress-bar-fill::after {
+    background-color: #2DAE60;
+}
+
+.mat-paginator-navigation-previous {
+    border: 1px solid gray !important;
+    background-color: #1875F0 !important;
+}
+
+.mat-paginator-navigation-next {
+    border: 1px solid gray !important;
+    background-color: #1875F0 !important;
+
+}
+
+.mat-paginator-icon {
+    color: #ffffff;
+    margin-top: 0 !important;
+    font-size: 9px !important;
+}

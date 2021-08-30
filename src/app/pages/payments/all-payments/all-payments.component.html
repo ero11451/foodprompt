@@ -1,0 +1,68 @@
+<div class="page-title">Payments <mat-spinner *ngIf="isLoadingResults === true" diameter="25"></mat-spinner></div>
+<div class="page-body">
+    <div class="top-toolbar-container" *ngIf="isLoadingResults === false">
+        <div class="top-toolbar-item">Showing 5 out of {{totalRecords}} payments</div>
+        <div class="top-toolbar-item">
+            <mat-form-field>
+                <mat-label>Search Payments</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Search Payments" #input>
+                <mat-icon matPrefix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="top-toolbar-item">
+            <span class="show">Show</span> 
+            <mat-form-field>
+                <mat-label>All</mat-label>
+                <mat-select>
+                  <mat-option value="option">Reconciled</mat-option>
+                  <mat-option value="option">Un-reconciled</mat-option>
+                  <mat-option value="option">Settled</mat-option>
+                  <mat-option value="option">Unsettled</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+
+    </div>
+
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+     <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User Id </th>
+        <td mat-cell *matCellDef="let row"> {{row.userId}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+      </ng-container>
+
+        <ng-container matColumnDef="completed">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Completed </th>
+            <td mat-cell *matCellDef="let row"> {{row.completed}} </td>
+        </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+
+      <tr class="mat-row" *ngIf="isLoadingResults">
+        <td class="mat-cell" colspan="4"><mat-spinner diameter="30"></mat-spinner></td>
+      </tr>
+
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+  </div>
+</div>
+  

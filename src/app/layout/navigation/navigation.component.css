@@ -1,0 +1,61 @@
+.nav-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-flex-container > div {
+    background-color: #fff;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .invoice-button {
+    border-radius: 12px;
+    background-color: #27AE60;
+    border: none;
+    color: white;
+    padding: 6px 20px 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    width: 75%;
+    outline-width: 0;
+  }
+
+  .invoice-button:hover {
+      background-color: gray;
+  }
+
+  .menu-item-label, .menu-item {
+    font-size: 16px;
+    color: #647787;
+    line-height: 45px;
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .menu-item {
+      cursor: pointer;
+  }
+
+  .menu-item-option {
+      margin-left: 10px;
+  }
+
+  .menu-icon {
+      width: 23px;
+      height: 23px;
+  }
+
+  .active-route {
+    border-left: 5px solid #1875F0;
+    background-color: #E8F1FD;
+    outline-width: 0;
+  }

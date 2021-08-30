@@ -1,0 +1,38 @@
+<mat-toolbar class="header">
+    <button class="menu-icon" mat-icon-button (click)="onToggleSidenav()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="header-flex-container">
+        <img class="logo" src="assets/img/logo.png">
+        <div class="search-field-container"><mat-icon class="search-icon">search</mat-icon> <input class="full-width-input" placeholder="Search"></div>
+        <div class="margined-flex-item link" routerLink="tools/support">Support</div>  
+        <div class="link" routerLink="tools/faq">FAQ</div>
+        <div class="notification-container link" routerLink="tools/notifications"><mat-icon matBadge="15" matBadgeSize="medium" matBadgeOverlap="false" class="notification-icon">notifications_none</mat-icon></div> 
+        <div class="user-details-container">
+            <span class="user-details-welcome">
+                <div class="user-details-welcome-hello">Hello</div>
+                <div class="user-details-welcome-name">{{userName}}</div>
+            </span>
+        </div>
+        <img class="user-details-image" src="assets/img/profile-img/IMG_20200131_170825_8.jpg">
+
+        <div class="responsive-menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="tools/support"> 
+                  <span>Support</span>
+                </button>
+                <button mat-menu-item routerLink="tools/faq"> 
+                    <span>FAQ</span>
+                  </button>
+                <button mat-menu-item routerLink="tools/notifications">
+                  <mat-icon>notifications_none</mat-icon>
+                  <span>Notifications</span>
+                </button>
+              </mat-menu>
+        </div>
+
+      </div>
+</mat-toolbar>
