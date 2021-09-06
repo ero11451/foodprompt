@@ -14,6 +14,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RemoveWhiteSpacePipe } from '../common/custom-pipes/remove-white-space.pipe';
 import { RouterModule } from '@angular/router';
 import { LowerCaseFirst } from '../common/custom-pipes/lower-case-first.pipe';
+import { UserNavPaneComponent } from './navigation/user-nav-pane/user-nav-pane.component';
 
 
 
@@ -24,7 +25,7 @@ import { LowerCaseFirst } from '../common/custom-pipes/lower-case-first.pipe';
     HeaderComponent, 
     NavigationComponent, 
     RemoveWhiteSpacePipe, 
-    LowerCaseFirst],
+    LowerCaseFirst, UserNavPaneComponent],
   imports: [
     CommonModule,
     RouterModule,

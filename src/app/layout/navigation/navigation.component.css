@@ -2,60 +2,50 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center;
+    height: 85vh;
+    max-height: 85vh;
+    overflow: auto;
+    /* background-color: black;
+    color: white; */
   }
-
+.menu-wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
   .nav-flex-container > div {
-    background-color: #fff;
+    
     width: 100%;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+    margin: 5px 0;
+    
+    line-height: 65px;
+    
   }
-
-  .invoice-button {
-    border-radius: 12px;
-    background-color: #27AE60;
-    border: none;
-    color: white;
-    padding: 6px 20px 6px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 13px;
-    cursor: pointer;
-    width: 75%;
-    outline-width: 0;
-  }
-
-  .invoice-button:hover {
-      background-color: gray;
-  }
-
-  .menu-item-label, .menu-item {
-    font-size: 16px;
-    color: #647787;
-    line-height: 45px;
-    text-align: left;
-    padding-left: 30px;
-  }
-
   .menu-item {
-      cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: .9em;
+    
+    font-weight: 600;
   }
-
-  .menu-item-option {
-      margin-left: 10px;
-  }
-
   .menu-icon {
-      width: 23px;
-      height: 23px;
+    margin:0 15px;
+    margin-left: 10px;
   }
-
-  .active-route {
-    border-left: 5px solid #1875F0;
-    background-color: #E8F1FD;
+  .active-route{
+    padding: 0;
+    color: #E35B67;
+  }
+  .active-route .selected{
+    border: 5px solid transparent;
+    /* border-right: 5px solid #1875F0; */
+    
+    /* width: 2px; */
+    background: #E35B67;
     outline-width: 0;
+    padding: 0;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    height: 50px;
   }
