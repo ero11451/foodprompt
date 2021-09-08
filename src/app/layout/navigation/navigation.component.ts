@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MainMenu } from 'src/app/models/menu';
+import { topMenu, bottomMenu } from "./menu";
 
 @Component({
   selector: 'app-navigation',
@@ -6,14 +8,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  /*
+  add menu items in the menu.ts file ./menu.ts
+  */ 
+  // initialize top and bottom menu
+  public topMenu: Array<MainMenu> = topMenu;
+  public bottomMenu: Array<MainMenu> = bottomMenu;
+  public showMenu: boolean = true;
 
-menu = [
-    {label:"Main", items:["Overview"]},
-    {label:"Payments", items:["All Payments", "Reconciled Payments", "Un - Reconciled Payments", "Manual Settlement"]},
-    {label:"Orders", items:["All Orders", "Pending Orders", "Reconciled Orders"]},
-    {label:" ", items:["Merchant Profile"]}
-  ]
-  
   @Output() sidenavClose = new EventEmitter();
 
   constructor() { }
