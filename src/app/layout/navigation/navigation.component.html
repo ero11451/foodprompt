@@ -1,14 +1,37 @@
-<div class="nav-flex-container">
-    <div class="misc"><button class="invoice-button">GENERATE INVOICE</button></div>
-    <div *ngFor="let menuSet of menu">
-        <div class="menu-item-label">{{menuSet.label}}</div>
-        
-        <div routerLink="{{menuSet.label | custom_lowerCaseFirst}}/{{menuItem | custom_removeWhiteSpace | custom_lowerCaseFirst}}" routerLinkActive="active-route" class="menu-item" *ngFor="let menuItem of menuSet.items">
-            <span class="menu-icon-holder">
-                <img src="assets/img/icons/{{menuSet.label}}{{menuItem | custom_removeWhiteSpace}}.svg">
-            </span>
-            <span class="menu-item-option">{{menuItem}}</span>
-        </div>
+<app-user-nav-pane></app-user-nav-pane>
+<nav class="nav-flex-container">
+    <div *ngIf="showMenu" class="menu">
+        <ul *ngIf="topMenu" class="menu-wrapper">
+            <li *ngFor="let menu of topMenu">
+                <p
+          class="menu-item"
+          href=""
+          routerLink="/{{ menu.link }}"
+          routerLinkActive="active-route"
+         
+        >
+        <span class="selected"></span>
+          <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
+          <span>{{ menu.label }}</span>
+        </p>
+            </li>
+        </ul>
     </div>
-
-  </div>
+    <div *ngIf="showMenu" class="menu">
+        <ul *ngIf="bottomMenu && bottomMenu.length" class="menu-wrapper">
+            <li *ngFor="let menu of bottomMenu">
+                <p
+          class="menu-item"
+          href=""
+          routerLink="/{{ menu.link }}"
+          routerLinkActive="active-route"
+         
+        >
+        <span class="selected"></span>
+          <mat-icon class="menu-icon">{{ menu.icon }}</mat-icon>
+          <span>{{ menu.label }}</span>
+        </p>
+            </li>
+        </ul>
+    </div>
+</nav>

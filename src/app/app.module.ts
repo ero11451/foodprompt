@@ -19,9 +19,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentsService } from './services/payments.service';
 import { HttpErrorHandler } from './common/custom-pipes/handlers/http-error-handler.service';
 import { MessageService } from './common/custom-pipes/handlers/message.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
 import {FormsModule} from "@angular/forms"
+import { HttpConfigInterceptor } from './common/custom-pipes/http.interceptor';
 
 
 @NgModule({
@@ -48,7 +49,11 @@ import {FormsModule} from "@angular/forms"
     GoogleChartsModule,
     FormsModule
   ],
-  providers: [PaymentsService, HttpErrorHandler, MessageService],
+  providers: [PaymentsService, HttpErrorHandler, MessageService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpConfigInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
