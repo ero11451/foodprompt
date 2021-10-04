@@ -1,0 +1,43 @@
+<div class="flex flex-spacebetween">
+    <div class="search">
+      <div class="input-icons">
+         <mat-icon class="fa fa-user icon">search</mat-icon>
+         <input class="input-field" placeholder="Search" type="text">
+      </div>
+     <div class="box">
+         <select>
+           <option>Filler bt</option>
+         </select>
+       </div>
+  </div>
+   
+   </div>
+
+<div class="container">
+    <div class="card" *ngFor="let item of [1,1,1,1]">
+        <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="">
+        <p class="text-bold mt-2 ">565</p>
+        <p >January 27, 2017 - 3:45 PM</p>
+        <p class="text-bold mt-2">Tea</p>
+        <p class="address">497 Evergreen Rd. Roseville,  CA 95673</p>
+        <br>
+        <div >
+            <p class="text-bold">Black Shoes</p>
+            <p>875</p>
+        </div>
+
+        <div class="mt-2">
+            <p class="text-bold">Subtotal</p>
+            <p>875</p>
+        </div>
+        <div>
+            <p class="text-bold">Sales Tax (7.5%)</p>
+            <p>875</p>
+        </div>
+        <div>
+            <p class="text-bold">Tip</p>
+            <p>875</p>
+        </div>
+        <button mat-flat-button color="primary">Reorder</button>
+    </div>
+</div>

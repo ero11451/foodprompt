@@ -1,0 +1,87 @@
+<div class="page-layout">
+    
+    <div class="main-container">
+      <mat-toolbar >
+        <mat-list>
+          <mat-list-item>
+            
+        <mat-icon (click)="back()">arrow_back</mat-icon>
+        <img  *ngIf="Vendor.image" src='http://77.68.72.215/foodpt/public/{{Vendor.image.path}}' >
+          
+         <div class="">
+             <p class="title">
+               {{Vendor.name}}
+              <mat-icon >check_circle</mat-icon></p> 
+             <!-- <mat-icon>location_on</mat-icon> -->
+             <small> 
+                <!-- {{ Vendor.address.house_no}},  
+                {{Vendor.address.street_name}} 
+                {{Vendor.address.lga}}
+                {{Vendor.address.state}}
+                {{Vendor.address.country}}-->
+              </small>
+         </div>
+         
+        </mat-list-item>
+        </mat-list>
+        <span class="example-spacer"></span>
+        <mat-list class="mt-2" style="margin-right: 10%;">
+          <mat-list-item>
+            <app-carticon></app-carticon>
+            <p class="promo">
+              {{Vendor.promo}}   
+            </p> 
+          </mat-list-item>
+        </mat-list>
+      </mat-toolbar>
+
+      <div class="flex">
+        <img class="food-image" src="http://77.68.72.215/foodpt/public/{{food.image.path}}">
+     
+    <mat-list class="content-detail">
+      <mat-list-item class="" >
+        <!-- <mat-icon> fastfood</mat-icon> -->
+        <div>
+          <p class="text-bold">{{ food.name}}</p>
+        </div>
+          
+        <span class="example-spacer"></span>
+        
+      </mat-list-item>
+      <mat-list-item>
+        <p >
+          {{food.description}}   
+         </p>
+      </mat-list-item>
+      <mat-list-item>
+          <mat-icon>payment</mat-icon>
+          <p class="text-bold"> ${{food.price}}</p>
+          <!-- <span class="example-spacer"></span> -->
+      <mat-icon></mat-icon>
+          <mat-icon>category</mat-icon>
+          <div>
+            <p>Category</p>
+            <p class="text-bold">{{food.category.name}}</p>
+          </div> 
+      </mat-list-item>
+    
+      <mat-list-item>
+        <mat-icon color="wary">schedule</mat-icon>
+        <div>
+          <p>Estimated delivery time</p>
+          <p class="text-bold">{{food.estimated_delivery_time}}</p>
+        </div> 
+      </mat-list-item>
+      <button mat-stroked-button
+        (click)="orderNow(food)"
+       class="cart-btn" color="wary">
+         <mat-icon>add_shopping_cart</mat-icon>  
+         Order now
+       </button>
+    </mat-list>
+  
+  </div>
+    
+   
+    </div>
+    </div>

@@ -1,0 +1,47 @@
+<div class="title">
+   <img src="assets/img/foodimages/food-store.png" class="vendor-icon-image" alt="" srcset="">
+  <p>Become a Vendor</p>
+</div>
+<p>{{response}}</p>
+<form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" >
+  <input type="file" class="custom-file-input" (change)="uploadFile($event)">
+  <br><br>
+  <mat-form-field appearance="outline">
+    <mat-label>Email </mat-label>
+    <input matInput placeholder="Email" formControlName = 'email'>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contact Email</mat-label>
+    <input matInput placeholder="contact_email" formControlName = 'contact_email'>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Password </mat-label>
+    <input matInput placeholder="password" formControlName = 'password'>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Password Confirmation </mat-label>
+    <input matInput placeholder="password" formControlName = 'password_confirmation'>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contact Phone</mat-label>
+    <input matInput placeholder="contact_phone" formControlName = 'contact_phone'>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Closing Time</mat-label>
+    <input matInput placeholder="closing_time" formControlName = 'closing_time'>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Class</mat-label>
+    <input matInput placeholder="contact_phone" formControlName = 'class'>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Opening Time</mat-label>
+    <input matInput placeholder="opening_time" formControlName = 'opening_time'>
+  </mat-form-field>  
+  <mat-form-field appearance="outline">
+    <mat-label>Promo</mat-label>
+    <input matInput placeholder="promo" formControlName = 'promo'>
+  </mat-form-field>  
+	    
+  <button mat-flat-button [disabled]="vendorForm.invalid" color="warn">Submit</button>
+ </form>

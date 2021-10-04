@@ -1,0 +1,16 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+button {
+    padding: 10px;
+    font-size: 20px;
+}
+div {
+    margin: 15px;
+    
+}
+mat-icon{
+    font-size: 25px;
+    margin: 0px 10px 0px 0px;
+}

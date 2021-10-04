@@ -1,3 +1,5 @@
+import { MatCardModule } from '@angular/material/card';
+import { ReviewModule } from './../review/review.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkAreaComponent } from './work-area/work-area.component';
@@ -27,10 +29,12 @@ import { UserNavPaneComponent } from './navigation/user-nav-pane/user-nav-pane.c
     RemoveWhiteSpacePipe, 
     LowerCaseFirst, UserNavPaneComponent],
   imports: [
+    ReviewModule,
     CommonModule,
     RouterModule,
     LayoutRoutingModule,
     MatTabsModule,
+    MatCardModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

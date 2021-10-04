@@ -1,0 +1,136 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.card{
+    margin: 1% ;
+    border-radius: 10px;
+    padding: 2%;
+    width: fit-content;
+    box-shadow: 5px 5px 10px #888888;
+    float: left;
+}
+.card img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+.card button{
+    width: 100%;
+    background: 
+    #2699fb;
+    margin-top: 10%;
+}
+.card div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.card .address{
+    width: 80%;
+}
+.text-bold{
+    font-weight: 700;
+}
+.mt-2{
+    margin-top: 5%;
+}
+
+.container{
+    margin-top: 1%;
+    padding-left: 1%;
+}
+
+
+
+
+
+
+
+.search {
+    display: flex;
+    padding: 0% 0% 0% 2% ;
+}
+ .input-icons mat-icon {
+    position: absolute;
+}
+  
+.input-icons {
+    width: fit-content;
+    margin-bottom: 10px;
+}
+.edit-vendor-btn{
+    padding: 0px 15px;
+    height: 45px;
+    margin: 2% 3% 1% 0%;
+    color: #2699fb;
+    border: #2699fb solid 2px;
+}
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    border-radius: 5px;
+    width: 140%;
+    padding: 15px 40px;
+    text-align: left;
+    background-color: none;
+    background:none ;
+    border: none;
+    box-shadow: 2px 2px 8px #888888;
+}
+
+
+.box select {
+    
+    margin:0px 180%  ;
+    background-color:   #e35b67;
+    color: white;
+    padding: 15px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+  
+  .box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
+  .menu-title {
+      margin:  20px ;
+      font-weight: 700;
+  }
+  .content-text{
+      width: 70%;
+      margin: 20px;
+  }
+  .flex{
+      display: flex;
+  }

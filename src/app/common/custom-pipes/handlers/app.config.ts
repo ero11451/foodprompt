@@ -1,11 +1,12 @@
 interface IAppConfig {
   BaseUrl?: string;
   AppName?: string;
+  Token?: string
 }
 
 export const AppConfig: IAppConfig = {
-
-  BaseUrl: 'https://jsonplaceholder.typicode.com/',
-  AppName: 'Transmonitor'
+  Token : localStorage.getItem('token'),
+  BaseUrl: 'http://77.68.72.215/foodpt/public/api',
+  AppName: 'Foodprompt'
 
 };

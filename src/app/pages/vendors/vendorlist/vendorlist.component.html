@@ -1,0 +1,88 @@
+<div class="header">
+    <div class="aline">
+      <div class="logo-border">
+        <div class="logo-white-bor"></div>
+      </div>  
+      <p class="title">Vendors</p>    
+    </div> 
+     <mat-list>
+        
+    <mat-list-item>
+      <app-carticon></app-carticon>
+      <br>
+        <button class="btn-red" (click)="becomeVendor()" mat-stroked-button color="primary">
+        Become a vendor
+      </button> 
+    </mat-list-item>
+      </mat-list>
+ 
+</div>
+
+<div class="flex flex-spacebetween">
+    <div class="search">
+      <div class="input-icons">
+         <mat-icon class="fa fa-user icon">search</mat-icon>
+         <input class="input-field" (keypress)="search($event)" placeholder="Search of vendor" type="text">
+      </div>
+     <div class="box">
+         <!-- <select>
+           <option>All vendors</option>
+         </select> -->
+       </div>
+  </div>
+     
+   </div>
+   <br>
+  <!-- <div class="flex-spacebetween">
+     <p class="menu-title">Menu</p>
+  </div> -->
+  
+  <div class="card-container">
+
+    <ng-container *ngIf="!isSearch">
+      <mat-card class="card" (click)="viewVendor(vendor.id) " *ngFor="let  vendor of  Vendors">
+        <img  src='../../../assets/img/foodimages/defaultimage.png'
+         *ngIf="!vendor.image" >
+        <img  src='http://77.68.72.215/foodpt/public/{{vendor.image.path}}' *ngIf="vendor.image" >
+        <p class="title " (click)="navTo() "> {{vendor.name}} </p>
+          <!-- <p>{{vendor.promo}}</p> -->
+        <div class="card-footer">
+          <mat-icon class="location-icon">location_on</mat-icon> 
+          <p *ngIf="vendor.address">
+             {{vendor.address.house_no }} 
+             {{vendor.address.street_name}} ,
+             {{vendor.address.lga}} ,
+             {{vendor.address.state}} ,
+             {{vendor.address.country}}  
+          </p> 
+        </div>
+     </mat-card>  
+    </ng-container>
+    
+<ng-container *ngIf="isSearch">
+
+  <mat-card class="card"
+  (click)="viewVendor(vendor.id)
+  " *ngFor="let  vendor of  searchVendors">
+  <img  src='../../../assets/img/foodimages/defaultimage.png'
+   *ngIf="!vendor.searchable.image" >
+  <img  src='http://77.68.72.215/foodpt/public/{{vendor.searchable.image.path}}'
+   *ngIf="vendor.searchable.image" >
+  <p class="title " (click)="navTo() "> {{vendor.searchable.name}} </p>
+    <!-- <p>{{vendor.promo}}</p> -->
+  <div class="card-footer" *ngIf="vendor.address">
+    <mat-icon class="location-icon">location_on</mat-icon> 
+    <p >
+       {{vendor.searchable.address.house_no }} 
+       {{vendor.searchable.address.street_name}} ,
+       {{vendor.searchable.address.lga}} ,
+       {{vendor.searchable.address.state}} ,
+       {{vendor.searchable.address.country}}  
+    </p> 
+  </div>
+</mat-card> 
+</ng-container>
+
+  </div>
+
+ 

@@ -1,0 +1,107 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.title{
+    font-size: 20px;
+}
+.content-detail{
+    width: 30%;
+}
+.promo{
+    color: white;
+    background-color:   #fcad04;
+    padding: 0px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+    margin-right: 20px;
+}
+.text-bold{
+    font-weight: 800;
+}
+.food-image {
+    width: 30%;
+    height: 300px;
+}
+.page-layout{
+    /* display: grid;
+    grid-template-columns: 75% 25%; */
+}
+.side-content{
+    background-color: none;
+    height: 100vh;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+      background-color: none;
+      background:none ;
+      margin: 10px 10px 10px 0px;
+  }
+  mat-toolbar   mat-icon{
+    color:     #2699fb;
+    }
+  mat-toolbar .check-icon{
+      margin:0px 20px 0px 20px;
+  }
+    mat-toolbar img{
+        width: 90px ;
+        height: 60px;
+        margin: 20px;
+        background-color: darkred;
+        object-fit: cover;
+    }
+    mat-toolbar small{
+    font-size: 15px;
+    color: gray;
+    font-weight: 100;
+    margin: 0px 0px 0px 0px ;
+}
+.food-item {
+    font-size: 20px;
+    width: 50%;
+}
+.food-item div{
+    margin: 0px 10px;
+}
+.search {
+    display: flex;
+    padding: 1.5% 2% ;
+    justify-content: space-between;
+}
+.cart-btn{
+    border: #e35b67 solid 2px;
+    color: white;
+    background:  #e35b67;
+    padding: 10px 20px;
+    margin: 10px;
+}
+ 
+  
+
+  
+  @media screen and (max-width: 600px) {
+    .food-image {
+        width: 100%;
+        height: 300px;
+    }
+    .content-detail{
+        width: 100%;
+    }
+    .mt-2 {
+        margin-top: 20px;
+    }
+    mat-toolbar {
+        display: block;
+        margin-bottom: 100px;
+    }
+    .example-spacer {
+        flex: none
+      }
+    .flex  {
+        display: block;
+    }
+   
+    
+}

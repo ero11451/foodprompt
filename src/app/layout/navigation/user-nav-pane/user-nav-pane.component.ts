@@ -7,14 +7,21 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./user-nav-pane.component.css']
 })
 export class UserNavPaneComponent implements OnInit {
-  public user: User = {
-    firstname: "Orokotan",
-    lastname: "Yemi",
-    imageUrl: "IMG_20200131_170825_8.jpg",
-  };
+  // public user: User = {
+  //   firstname: "Orokotan",
+  //   imageUrl: "user.jpg"
+  //   lastname: "Yemif",
+  // };
+  
+  user:any = {}
+  userName
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    
+    let us = localStorage.getItem('user');
+    this.user = JSON.parse(us) 
+    this.userName = this.user.last_name + this.user.first_name
   }
 
 }

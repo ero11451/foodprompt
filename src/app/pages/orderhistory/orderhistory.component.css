@@ -1,0 +1,43 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+.aline{
+    display: flex;
+}
+.logo-border{
+    display: flex;
+    border-radius: 0px 17px 17px 0px;
+    background:  #e35b67;
+    width: 30px;
+
+    height: 45px;
+    margin: 10px;
+}
+.logo-border .logo-white-bor{
+    border-radius: 0px 20px 20px 0px;
+    background-color: none;
+    background: #F7F8FA;
+    height: 45px;
+    width: 20px;
+    margin-right: -10px;
+}
+.title{
+    font-size: 30px;
+    font-weight: 800;
+    margin: 10px;
+}
+.header .btn-red{
+    height: 50px;
+    background:  #e35b67;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+}
+
+

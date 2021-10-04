@@ -1,0 +1,23 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.grid{
+    display: flex;
+}
+.grid div {
+    margin-left: 0px;
+}
+.grid mat-icon{
+    margin: 10px;
+}
+.text-bold{
+    font-weight: 800;
+}
+.promo{
+    color: white;
+    background-color:   #fcad04;
+    padding: 0px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+}

@@ -1,0 +1,39 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+mat-card{
+    padding: 20px;
+}
+img {
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.header {
+    display: flex;
+    margin-bottom: 10px;
+}
+.header div {
+    margin:2% 5%;
+}
+.text-bold{
+    font-weight: 800;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+.icon-container {
+    display: flex;
+}
+.btn {
+    width: 100%;
+    /* padding: 10px; */
+    margin-top: 10px;
+    
+}
+.btn-primary {
+    width: 300pc !important;
+}

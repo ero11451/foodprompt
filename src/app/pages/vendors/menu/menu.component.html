@@ -1,0 +1,81 @@
+<div class="page-layout">
+    
+    <div class="main-container">
+      <mat-toolbar >
+        <mat-list>
+          <mat-list-item>
+            
+        <mat-icon (click)="back()">arrow_back</mat-icon>
+        <img *ngIf="Vendor.image" src='http://77.68.72.215/foodpt/public/{{Vendor.image.path}}' alt="" srcset="">
+          
+         <div class="">
+             <p class="title">{{Vendor.name}}
+              <mat-icon>check_circle</mat-icon>
+            </p> 
+             <mat-icon>location_on</mat-icon>
+             <small> 
+                {{ Vendor.address.house_no}}, 
+                {{Vendor.address.street_name}} 
+                {{Vendor.address.lga}}
+                {{Vendor.address.state}}
+                {{Vendor.address.country}}
+              </small>
+         </div>
+         
+        </mat-list-item>
+        </mat-list>
+        <span class="example-spacer"></span>
+        <mat-list class="mt-2">
+          <mat-list-item>
+            <app-carticon></app-carticon>
+            <p class="promo">
+              {{Vendor.promo}}   
+            </p> 
+          </mat-list-item>
+        </mat-list>
+      </mat-toolbar>
+     <div class="flex flex-spacebetween">
+      <div class="search">
+        <div class="input-icons">
+           <mat-icon class="fa fa-user icon">search</mat-icon>
+           <input class="input-field" (keypress)="search($event)" placeholder="Search" type="text">
+        </div>
+       <div class="box">
+           <!-- <select>
+             <option>Filler bt</option>
+           </select> -->
+         </div>
+    </div>
+        <!-- <button class="edit-vendor-btn" mat-stroked-button color="primary">
+          Add a meal
+        </button> -->
+     </div>
+    <div class="flex-spacebetween">
+       <p class="menu-title">Menu</p>
+    </div>
+    <div class="card-container">
+      <ng-container *ngIf="!isSearch">
+        <div class="card" (click)="navTo(item.id)" *ngFor="let item of menus">
+        
+          <img src="http://77.68.72.215/foodpt/public/{{item.image.path}}" alt="" srcset="">
+          <!-- <img  [src]="item.image" mat-card-image > -->
+          <p class="title ">{{item.name}}</p>
+          <p> ${{item.price}}</p>
+         </div>   
+      </ng-container>
+      
+       <ng-container *ngIf="isSearch">
+        <div class="card" (click)="navTo(item.id)" *ngFor="let item of searchMenu">
+        
+          <img src="http://77.68.72.215/foodpt/public/{{item.searchable.image.path}}" alt="" srcset="">
+          <!-- <img  [src]="item.image" mat-card-image > -->
+          <p class="title ">{{item.searchable.name}}</p>
+          <p> ${{item.searchable.price}}</p>
+         </div>  
+       </ng-container>
+       
+    </div>
+  
+    </div>
+      <!-- <app-review></app-review> -->
+    </div>

@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  userName = "Yemi Orokotan";
+  userName :string = '';
 
   @Output() public sidenavToggle = new EventEmitter();
 
@@ -19,7 +19,12 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  user
+  ngOnInit(){
+    
+    let us = localStorage.getItem('user');
+    this.user = JSON.parse(us) 
+    this.userName = this.user.last_name + this.user.first_name
   }
 
 }

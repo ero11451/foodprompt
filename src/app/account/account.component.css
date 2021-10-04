@@ -1,0 +1,46 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.main-container{
+    margin: 2% 5%;
+    display: block;
+    width: 35%;
+}
+.long-input {
+    width: 100%;
+}
+.small-input{
+    width: 29%;
+    margin-right: 1%;
+}
+.mid-input{
+    width: 70%;
+}
+mat-icon{
+    color:  #2699fb;
+    margin: 0px 10px 0px 0px;
+}
+.text-bold{
+    font-weight: 900;
+}
+.text-muted{
+    color: lightgray;
+}
+.btn{
+    margin-top: 5%;
+    width: 100%;
+    padding: 2%;
+    background:  #2699fb;
+}
+
+
+
+  
+@media screen and (max-width: 600px) {
+    .main-container{
+        margin: 2% 5%;
+        display: block;
+        width: 90%;
+    }
+}

@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.side-content{
+    background-color: none;
+    height: 100vh;
+}
+.title{
+    font-size: 30px;
+}
+.link{
+    margin:2% 3%;
+    color: #2699fb;
+}
+.promo{
+    color: white;
+    background-color:   #fcad04;
+    padding: 0px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+}
+.flex-spacebetween{
+    display: flex;
+    justify-content: space-between;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+      background-color: none;
+      background:none ;
+      margin: 10px 10px 10px 0px;
+  }
+  mat-toolbar   mat-icon{
+    color:     #2699fb;
+    }
+  mat-toolbar .check-icon{
+      margin:0px 20px 0px 20px;
+  }
+  mat-toolbar img{
+        width: 90px ;
+        height: 60px;
+        margin: 20px;
+        background-color: darkred;
+        object-fit: cover;
+    }
+    mat-toolbar small{
+    font-size: 15px;
+    color: gray;
+    font-weight: 100;
+    margin: 0px;
+}
+.search-m {
+    margin: 2% 2% 1% 1%;
+}
+  .search {
+      width: 30%;
+      padding: 12px;
+      display: flex;
+      border-radius: 5px;
+      box-shadow: 1px;
+      box-shadow: 1px 1px 2px 1px #888888;    
+  }
+  .search p {
+      margin: 5px 0px 0px 5px;
+  }
+  .search button {
+      padding: 0px 10px;
+      color: #2699fb;
+      border: #2699fb 1px ;
+  }
+  .menu-title {
+      margin:  20px ;
+      font-size: 20px;
+      font-weight: 700;
+  }
+  .content-text{
+      width: 70%;
+      margin: 20px;
+  }
+  .flex{
+      display: flex;
+  }
+  app-item {
+      margin: 10px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .title{
+        font-size: 20px;
+    }
+    .mt-2 {
+        margin-top: 20px;
+    }
+    .flex {
+        display: block;
+    }
+    mat-toolbar {
+        display: block;
+        margin-bottom: 50px;
+    }
+    .example-spacer {
+        flex: none
+      }
+    .hearder-tab{
+      display: flex; 
+      justify-content: space-between;
+     
+    } .search{
+        width: 70%;
+    }
+  
+    .search {
+        width: 60%; 
+        margin:20% 0% 10px 5%;
+    }
+    
+  .search button {
+      padding: 0px 20px;
+      height: 40px;
+  }
+    }

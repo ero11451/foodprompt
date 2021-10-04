@@ -1,42 +1,57 @@
 .container {
-    position: absolute;
-    top: 0;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    background-color: #F7F8FA;
-    height: 100%;
-    /* Show toolbar shadow */
-    /* z-index: -1 !important;  */
-  }
-  
-  .sidenav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    background-color: white;
-    color: black;
-    height: 100%;
-  }
-  
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    
-  }
+  position: absolute;
+  top: 0px;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  background-color: #F7F8FA;
+  /* Show toolbar shadow */
+  /* z-index: -1 !important;  */
+}
 
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 10px;
-    width: 0px;
-    margin: auto;
-    height: 20px;
-    background-color: #ffffff;
-  
-  }
+.sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  background-color: white;
+  overflow: hidden;
+
+}
+.right-sidenav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  background-color: white;
+  overflow: hidden;
+
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 10px;
+  width: 0px;
+  margin: auto;
+  height: 20px;
+  background-color: #ffffff;
+
+}
+
+.hearder-tab{
+  display: flex; 
+  justify-content: space-between;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+.hearder-tab{
+  display: flex; 
+  justify-content: space-between;
+ 
+}
+
+}

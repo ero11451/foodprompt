@@ -1,14 +1,62 @@
-<ng-container>
-    
-    
-    <mat-sidenav-container class="container">
-      <mat-sidenav #sidenav mode="side" opened class="sidenav">
-        <app-navigation></app-navigation>
+
+  
+<ng-container [class.is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="container">
+  
+    <!----Will go in should toolbar scrolls with page, 
+    56 will change to height of our toolbar in header.component.html ---[style.marginTop.px]="mobileQuery.matches ? 56 : 0" ---->
+    <mat-sidenav
+      #sidenav
+      class="sidenav"
+      opened
+      mode="side"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+      id="navCon"
+      *ngIf="hideSideNav"
+    >
+      <app-navigation></app-navigation>
     </mat-sidenav>
-  
-      <mat-sidenav-content>
+    <mat-sidenav-content>
+      <mat-toolbar class="hearder-tab">
+        <span (click)="hideNav()" >
+          <mat-icon>sort</mat-icon>
+          </span
+        >
+        <span (click)="hideTray()">
+         <button mat-stroked-button>Review</button>
+        </span>
+      </mat-toolbar>
+      <main >
         <router-outlet></router-outlet>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  
-  </ng-container>
+      </main>
+    </mat-sidenav-content>
+
+    <mat-sidenav
+    #sidenav
+    class="right-sidena"
+    opened
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches"
+    fixedTopGap="56"
+    id="navCon"
+    opened 
+    mode="side"
+    position="end" 
+    *ngIf="hideSideTray">
+    <!-- <app-review></app-review> -->
+    <!-- <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar src="../../../assets/img/foodimages/food2.jpg">
+        <mat-card-title>ero osamuyi</mat-card-title> 
+      </mat-card-header> 
+        <mat-card-content>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, perferendis?
+        </mat-card-content>
+    </mat-card> -->
+    </mat-sidenav>
+  </mat-sidenav-container>
+
+  <!-- <mat-toolbar class="footer">Footer</mat-toolbar> -->
+</ng-container>

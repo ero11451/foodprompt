@@ -1,0 +1,8 @@
+<div class="scrolling-wrapper">
+    <div class="card" (click)="route(item.id)" *ngFor="let item of slides">
+        <!-- <img [src]="item.image" mat-card-image > -->
+        <img src="http://77.68.72.215/foodpt/public/{{item.image.path}}" alt="" srcset="">
+        <p class="text-bold" >{{item.name}}</p>
+        <p *ngIf="item.price"> ₦ {{ item.price}}</p>
+    </div>
+  </div>

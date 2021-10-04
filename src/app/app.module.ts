@@ -1,3 +1,5 @@
+import { MatButtonModule } from '@angular/material/button';
+import { SliderimageModule } from './sharedcomponent/sliderimage/sliderimage.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -21,9 +23,18 @@ import { HttpErrorHandler } from './common/custom-pipes/handlers/http-error-hand
 import { MessageService } from './common/custom-pipes/handlers/message.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
-import {FormsModule} from "@angular/forms"
+import { FormsModule, ReactiveFormsModule} from "@angular/forms"
 import { HttpConfigInterceptor } from './common/custom-pipes/http.interceptor';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
+
+import { MatGridListModule} from '@angular/material/grid-list';
+
+import { Angular4PaystackModule } from 'angular4-paystack';
+import { CartModule } from './sharedcomponent/maincart/cart.module';
+import { ItemModule } from './pages/vendors/item/item.module';
+import { RegisterModule } from './pages/register/register.module';
+import { UpdatevendorComponent } from './account/updatevendor/updatevendor.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +43,15 @@ import { HttpConfigInterceptor } from './common/custom-pipes/http.interceptor';
     AllPaymentsComponent
   ],
   imports: [
+    Angular4PaystackModule.forRoot('pk_test_24dc30abf9fa5926bb49fcfbeff9e33e5c659e45'),
+    CartModule,
+    ItemModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    RegisterModule,
+    MatButtonModule,
     MatProgressBarModule,
     MatTableModule,
     MatSortModule,
@@ -44,10 +60,14 @@ import { HttpConfigInterceptor } from './common/custom-pipes/http.interceptor';
     MatInputModule,
     MatSelectModule,
     MatIconModule,
+    SliderimageModule,
+    MatGridListModule,
     MatProgressSpinnerModule,
     HttpClientModule,
     GoogleChartsModule,
-    FormsModule
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PaymentsService, HttpErrorHandler, MessageService, {
     provide: HTTP_INTERCEPTORS,

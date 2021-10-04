@@ -1,0 +1,72 @@
+<div class="page-layout">
+    
+<div class="main-container">
+   <mat-toolbar >
+      <mat-list>
+        <mat-list-item>
+          
+      <mat-icon >arrow_back</mat-icon>
+      <img *ngIf="Vendor.image" src='http://77.68.72.215/foodpt/public/{{Vendor.image.path}}' alt="" srcset="">
+        
+       <div class="">
+           <p class="title">{{Vendor.name}} 
+            <mat-icon class="check-icon">check_circle</mat-icon>
+          </p> 
+           <mat-icon>location_on</mat-icon>
+           <small> 
+              {{ Vendor.address.house_no}}, 
+              {{Vendor.address.street_name}} 
+              {{Vendor.address.lga}}
+              {{Vendor.address.state}}
+              {{Vendor.address.country}}
+            </small>
+       </div>
+       
+      </mat-list-item>
+      </mat-list>
+      <span class="example-spacer"></span>
+      <mat-list class="mt-2">
+        <mat-list-item>
+          <app-carticon></app-carticon>
+          <p class="promo">
+            {{Vendor.promo}}   
+          </p> 
+        </mat-list-item>
+      </mat-list>
+    </mat-toolbar>
+ <div class="flex flex-spacebetween search-m">
+  <div class=" search" (click)="navTo()">
+       <mat-icon class="fa fa-user icon">search</mat-icon>    
+       <p>Search</p>
+   </div>
+    <!-- <button class="edit-vendor-btn" mat-stroked-button color="primary">
+      Add a meal
+    </button> -->
+ </div>
+<div class="flex-spacebetween">
+   <p class="menu-title">Menu</p>
+   <p  class="link" (click)="navTo()">See all</p>
+</div>
+ <app-sliderimage [slides] = 'slides'></app-sliderimage>
+
+ <div class="flex">
+    <app-item 
+     icon = 'schedule' 
+     title = 'Closing Time'
+     [subtitle] =  Vendor.closing_time >
+   </app-item>
+    <app-item icon = 'schedule' title = 'Opening Time' [subtitle] = Vendor.opening_time></app-item>
+ </div>
+ <div class="flex">
+    <app-item icon = 'category' title = 'Category' [subtitle] =  Vendor.category.name></app-item>
+ </div>
+ 
+ <div class="flex">
+   <app-item icon = 'star' title = 'Rating' [subtitle] =  Vendor.class></app-item>
+</div>
+ <!-- <p class="menu-title">Recent</p>
+ <app-sliderimage [slides]= 'slides'></app-sliderimage> -->
+
+</div>
+  <!-- <app-review></app-review> -->
+</div>

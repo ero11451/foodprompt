@@ -1,0 +1,60 @@
+<mat-list>
+<mat-list-item>
+   <p class="text-bold">Cart</p>
+</mat-list-item>
+ <!-- <button (click)="clearCart()">clear cart</button> -->
+</mat-list>
+
+<br>
+<mat-card *ngFor="let food of items ">
+   <div class="header">
+      <img src="http://77.68.72.215/foodpt/public/{{food.image.path}}"  alt="" srcset="">
+      <div>
+         <p class="text-bold">{{food.name}}</p>
+         <p >{{food.description}}.</p>
+         <p class="text-bold">{{food.subtotal}}</p>
+      </div>
+   </div>
+   <div class="footer">
+      <button mat-button color="warn" (click)=" deleteTodo(food) ">
+         <mat-icon>delete</mat-icon>
+         Remove
+      </button>
+      
+      <div class="icon-container">
+         <button mat-mini-fab color="warn"  (click)="decreaseItem(food)">-</button>
+         <button mat-button class="text-bold">{{food.portion}}</button>
+         <button mat-mini-fab color="warn" (click)="increaseItem(food)">+ </button>
+      </div>
+   </div>
+</mat-card>
+<br>
+<mat-card>
+   <div class="footer">
+     <p class="text-bold">Total</p> 
+     <p> {{ totalAmount }}</p> 
+   </div>
+   <button mat-flat-button *ngIf="!checkoutNow" class="btn"
+   (click)="checkOut()"
+   color="warn" >Checkout</button>
+   <ng-container >
+      
+   
+   <button
+   *ngIf="checkoutNow"
+   color="warn" 
+   mat-flat-button 
+   angular4-paystack
+   [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxx'"
+   [email]="'mailexample@mail.com'"
+   [amount]="5000000"
+   [ref]="reference"
+   [class]="'btn btn-primary'"
+   (paymentInit)="paymentInit()"
+   (onClose)="paymentCancel()"
+   (callback)="paymentDone($event)"
+ >Checkout
+ </button>
+ 
+</ng-container>
+</mat-card>

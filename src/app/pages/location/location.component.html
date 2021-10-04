@@ -1,0 +1,66 @@
+<div class="header">
+  <div class="aline">
+    <div class="logo-border">
+      <div class="logo-white-bor"></div>
+    </div>  
+    <p class="title">Location</p>    
+  </div> 
+   <mat-list>
+      
+  <mat-list-item>
+    <app-carticon></app-carticon>
+    <br>
+      <button  (click)="becomeVendor()"
+       mat-button color="warn">
+      Become a vendor
+    </button> 
+  </mat-list-item>
+    </mat-list>
+
+</div>
+
+<div class="flex flex-spacebetween">
+  <div class="search">
+    <div class="input-icons">
+       <mat-icon class="fa fa-user icon">search </mat-icon>
+       <input class="input-field" (keyup)="onKey($event)" placeholder="Search for a vendor" type="text">
+    </div>
+  
+</div>
+ </div>
+
+<!-- <div class="location-not-found"  *ngIf="!locations">
+  <p>There is no location right now</p>
+</div> -->
+
+
+<mat-card class="card"
+  (click)="viewVendor(vendor.searchable.id)" *ngFor="let  vendor of  Vendors">
+  <img  src='../../../assets/img/foodimages/defaultimage.png'
+   *ngIf="!vendor.searchable.image" >
+  <img  src='http://77.68.72.215/foodpt/public/{{vendor.searchable.image.path}}'
+   *ngIf="vendor.searchable.image" >
+  <p class="title " (click)="navTo(vendor.searchable) "> {{vendor.searchable.name}} </p>
+    <!-- <p>{{vendor.promo}}</p> -->
+  <div class="card-footer" *ngIf="vendor.address">
+    <mat-icon class="location-icon">location_on</mat-icon> 
+    <p >
+       {{vendor.searchable.address.house_no }} 
+       {{vendor.searchable.address.street_name}} ,
+       {{vendor.searchable.address.lga}} ,
+       {{vendor.searchable.address.state}} ,
+       {{vendor.searchable.address.country}}  
+    </p> 
+  </div>
+</mat-card> 
+<mat-list class="card-container" *ngIf="Vendors == 0">
+   <mat-list-item class="card" 
+    (click)="openVendor(location.location) "
+    *ngFor="let  location of  locations">
+        <mat-icon class="location-icon">location_on</mat-icon> 
+        <p class="text-bold" > {{location.location}} </p>
+        <span class="example-spacer"></span>
+        <mat-icon class="location-icon">arrow_right_alt</mat-icon>
+   </mat-list-item>  
+</mat-list>
+

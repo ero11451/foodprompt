@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MainMenu } from 'src/app/models/menu';
+import { LogoutComponent } from 'src/app/pages/register/logout/logout.component';
 import { topMenu, bottomMenu } from "./menu";
 
 @Component({
@@ -18,7 +20,9 @@ export class NavigationComponent implements OnInit {
 
   @Output() sidenavClose = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog,
+  ) { }
 
   public onSidenavClose = () => {
     this.sidenavClose.emit();
@@ -26,5 +30,15 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  logout() {
+    const dialogRef = this.dialog.open(LogoutComponent, {
+      width: '400px',
+      // data: {name: this.name, animal: this.animal}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
 }

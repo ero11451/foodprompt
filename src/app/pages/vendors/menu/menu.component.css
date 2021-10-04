@@ -1,0 +1,214 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.page-layout{
+    /* display: grid;
+    grid-template-columns: 75% 25%; */
+}
+.side-content{
+    background-color: none;
+    height: 100vh;
+}
+.title {
+    font-size: 20px;
+}
+.link{
+    margin:2% 3%;
+    color: #2699fb;
+}
+.flex-spacebetween{
+    display: flex;
+    justify-content: space-between;
+}
+.promo{
+    color: white;
+    background-color:   #fcad04;
+    padding: 0px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+      background-color: none;
+      background:none ;
+      margin: 10px 10px 10px 0px;
+  }
+  mat-toolbar   mat-icon{
+    color:     #2699fb;
+    }
+  mat-toolbar .check-icon{
+      margin:0px 20px 0px 20px;
+  }
+    mat-toolbar img{
+        width: 90px ;
+        height: 60px;
+        margin: 20px;
+        background-color: darkred;
+        object-fit: cover;
+    }
+    mat-toolbar small{
+    font-size: 15px;
+    color: gray;
+    font-weight: 100;
+    margin: 0px 0px 0px 0px ;
+}
+.search {
+    display: flex;
+    padding: 1.5% 0% 0% 2% ;
+}
+ .input-icons mat-icon {
+    position: absolute;
+}
+  
+.input-icons {
+    width: fit-content;
+    margin-bottom: 10px;
+}
+.edit-vendor-btn{
+    padding: 0px 15px;
+    height: 45px;
+    margin: 2% 3% 1% 0%;
+    color: #2699fb;
+    border: #2699fb solid 2px;
+}
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    border-radius: 5px;
+    width: 140%;
+    padding: 15px 40px;
+    text-align: left;
+    background-color: none;
+    background:none ;
+    border: none;
+    box-shadow: 2px 2px 8px #888888;
+}
+
+
+.box select {
+    
+    margin:0px 180%  ;
+    background-color:   #e35b67;
+    color: white;
+    padding: 15px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+  
+  .box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
+  .menu-title {
+      margin:  20px ;
+      font-weight: 700;
+  }
+  .content-text{
+      width: 70%;
+      margin: 20px;
+  }
+  .flex{
+      display: flex;
+  }
+  app-item {
+      margin: 10px;
+  }
+.card-container{
+    margin:0px 1.5%;
+}
+  .card {
+    width: 23.7%;
+    float: left;
+    text-align: left;
+    background-color: none;
+    border: none;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    background: none;
+    box-shadow: none;
+    padding: 0px;
+  }
+  .card  img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    
+  }
+  .card .title {
+      text-align: left;
+      margin: 0px;
+      font-weight: 800;
+  }
+
+  
+  @media screen and (max-width: 600px) {
+    .mt-2 {
+        margin-top: 20px;
+    }
+    mat-toolbar {
+        display: block;
+        margin-bottom: 100px;
+    }
+    .example-spacer {
+        flex: none
+      }
+    .flex  {
+        display: block;
+    }
+    .hearder-tab{
+      display: flex; 
+      justify-content: space-between;
+    }
+    .card {
+        clear: both;
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .input-field {
+        width: 50%;
+    }
+   
+    .box select {
+        margin:0px   ; 
+    }
+    .title{
+        font-size: 20px;
+        font-weight: 800;
+        margin: 10px;
+    }
+    .header .btn-red{
+
+    }    
+}
