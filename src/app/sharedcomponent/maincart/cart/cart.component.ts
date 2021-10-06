@@ -64,14 +64,16 @@ export class CartComponent implements OnInit {
   //   "payment_method" : "DEBIT CARD",
   //   "delivery_address_id" : 2,
   //   "payment_ref" : "PWOE93E93U93003J33"
-
+  let allQuantities = this.items.map((i) => {
+    return i.portion;
+  });
     this.title = 'Payment successfull';
     this.order.item = this.items
-    this.order.quantity = []
+    this.order.quantity = allQuantities
     this.order.delivery_charge = ref.transaction
     this.order.total_amount = this.totalAmount
     this.order.payment_status = ref.status
-    this.order.payment_method = 'DEBIT CARD'
+    this.order.payment_method = `PayStack`
     this.order.delivery_address_id = 1
     this.order.payment_ref = ref.reference
     console.log(this.order , ref)
