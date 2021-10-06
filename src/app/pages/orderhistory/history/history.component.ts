@@ -17,7 +17,7 @@ export class HistoryComponent implements OnInit {
       this.orders.map((item: any) => {
         let date = new Date(item.created_at);
         let newDate = this.datePipe.transform(date, "MMM d, y, h:mm:ss a");
-        console.log({ date: date, newDate: newDate });
+        // console.log({ date: date, newDate: newDate });
         item.created_at = newDate;
       });
     });
