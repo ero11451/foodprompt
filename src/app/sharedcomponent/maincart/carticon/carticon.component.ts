@@ -16,6 +16,9 @@ export class CarticonComponent implements OnInit {
     public cartService: CartService,) {}
   getCart() {
     this.items = this.cartService.cartItems;
+    if (!this.items) {
+      this.items = []
+    }
     this.cartService.loadCart()
     console.log('this is from cart icon', this.items)
   }

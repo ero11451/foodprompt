@@ -1,0 +1,12 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+mat-card{
+    margin: 5%;
+}
+.header{
+    background-color: #fcad0421;
+    padding: 5%;
+    font-weight: 800;
+}

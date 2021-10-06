@@ -2,6 +2,7 @@
 // import { VendorComponent } from './vendors/vendor/vendor.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './admin/admin/admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OverviewComponent } from './pages/main/overview/overview.component';
 import { AllPaymentsComponent } from './pages/payments/all-payments/all-payments.component';
@@ -10,6 +11,11 @@ const routes: Routes = [
   {
     path: "layout",
     loadChildren: () => import("./layout/layout.module").then((m) => m.LayoutModule)
+  },
+  {
+    path: "admin",  loadChildren: () =>
+    import("./admin/admin/admin.module").then((m) => m.AdminModule)
+
   },
   {
     path: "main/overview",

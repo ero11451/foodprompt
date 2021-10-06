@@ -6,6 +6,7 @@ export const topMenu: Array<MainMenu> = [
   { label: "Location", link: "location", icon: "location_on" },
   { label: "Account", link: "account", icon: "person" },
   
+  { label: "Admin", link: "admin", icon: "person" },
 ];
 export const bottomMenu: Array<MainMenu> = [
   { label: "Logout", link: "logout", icon: "logout" },

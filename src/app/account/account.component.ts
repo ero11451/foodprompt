@@ -21,7 +21,7 @@ export class AccountComponent implements OnInit {
     let us = localStorage.getItem('user');
     this.user = JSON.parse(us) 
     console.log('user from local storage', this.user)
-    if (this.user.vendor) {
+    if (this.user.vendor_id) {
       this.isVendor = true
     }
     this.formIN()

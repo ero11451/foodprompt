@@ -3,7 +3,12 @@
         <img src="../../../../assets/img/icons/user.png" alt="" />
     </div>
     <div class="user-details">
-        <p class="name">{{userName}}</p>
-        <p class="role" *ngIf="user.is_vendor">Vendor</p>
+        
+        <p class="name" *ngIf="!user" (click)="register()">Would you like to register</p>
+        <ng-container *ngIf="user">
+            <p class="name" *ngIf="userName">{{userName}}</p>
+            <p class="role" *ngIf="user.is_vendor">Vendor</p>
+        </ng-container>
+        
     </div>
 </div>

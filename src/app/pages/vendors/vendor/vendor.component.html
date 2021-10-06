@@ -1,4 +1,4 @@
-<div class="page-layout">
+<div class="layout">
     
 <div class="main-container">
    <mat-toolbar >
@@ -43,10 +43,14 @@
       Add a meal
     </button> -->
  </div>
-<div class="flex-spacebetween">
-   <p class="menu-title">Menu</p>
-   <p  class="link" (click)="navTo()">See all</p>
-</div>
+ <mat-toolbar >
+
+  <p class="menu-title">Menu</p>
+  <span class="example-spacer"></span>
+  <p  class="link" (click)="navTo()">See all</p>
+  
+</mat-toolbar>
+
  <app-sliderimage [slides] = 'slides'></app-sliderimage>
 
  <div class="flex">
@@ -68,5 +72,7 @@
  <app-sliderimage [slides]= 'slides'></app-sliderimage> -->
 
 </div>
-  <!-- <app-review></app-review> -->
+<div class="reviwe">
+  <app-review [rating] = 'rating'></app-review>
+</div>
 </div>

@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AppConfig } from 'src/app/common/custom-pipes/handlers/app.config';
@@ -11,12 +12,17 @@ export class VendorService {
 
   token = AppConfig.Token
   API_URL = AppConfig.BaseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
   getVendorBylocation(location) {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.token })
     return this.http.get(this.API_URL + '/vendorByLocation/'+ location , { headers })
       .pipe(map((res: any) => {
-           console.log(res)
+        console.log(res)
+        if (res.status === 'ok') {
+          this._snackBar.open(res.message)
+        } else {
+          this._snackBar.open(res.message)
+        }
            return res.data || {}
        }),
        catchError(this.handleError)
@@ -24,14 +30,16 @@ export class VendorService {
   }
 
   becomeAvendor(user){
-    return this.http.post<any>(this.API_URL + '/register_vendor', user).subscribe(vendor => {
+    return this.http.post<any>(this.API_URL + '/register_vendor', user)
+      .pipe(map(vendor => {
+        console.log('this from the vendor service', vendor)
       if (vendor.status === 'ok') {
           localStorage.clear()
           localStorage.setItem(`user`, JSON.stringify(vendor.data));
       } else {
         return 'There was an error with your input'
       }
-    })
+    }))
     catchError(this.handleError)
      
   }

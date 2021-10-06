@@ -1,8 +1,6 @@
 
-import { MenuComponent } from './menu/menu.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooddetailComponent } from './fooddetail/fooddetail.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -19,22 +17,26 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
-import { ItemModule } from './item/item.module';
+
 // import { SliderimageModule } from '../sharedcomponent/sliderimage/sliderimage.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { VendorComponent } from './vendor/vendor.component';
 // import { ReviewComponent } from '../review/review/review.component';
 // import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import {MatListModule} from '@angular/material/list';
-import { VendorlistComponent } from './vendorlist/vendorlist.component';
 import { MatBadgeModule } from '@angular/material/badge';
 // import { CartModule } from '../sharedcomponent/maincart/cart.module';
-import { BecomeavendorComponent } from './becomeavendor/becomeavendor.component';
 import { PageNotFoundComponent } from 'src/app/page-not-found/page-not-found.component';
 import { CartModule } from 'src/app/sharedcomponent/maincart/cart.module';
 import { SliderimageModule } from 'src/app/sharedcomponent/sliderimage/sliderimage.module';
-
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { VendorlistComponent } from './vendorlist/vendorlist.component';
+import { VendorComponent } from './vendor/vendor.component';
+import { ItemModule } from './item/item.module';
+import { MenuComponent } from './menu/menu.component';
+import { FooddetailComponent } from './fooddetail/fooddetail.component';
+import { ReviewModule } from 'src/app/review/review.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 const routes: Routes = [
   {
     path: '', 
@@ -82,6 +84,8 @@ const routes: Routes = [
     MatTableModule,
     MatSortModule,
     MatCardModule,
+  
+    MatSnackBarModule,
     MatFormFieldModule,
     MatPaginatorModule,
     MatInputModule,
@@ -91,8 +95,11 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     HttpClientModule,
     GoogleChartsModule,
+    MatBottomSheetModule,
+    MatButtonModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    ReviewModule,
     FormsModule
   ]
 })

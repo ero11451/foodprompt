@@ -1,18 +1,27 @@
-<div class="header">
-    <p>
+<mat-list class="header">
+  <mat-list-item>
+     <p>
         Review
     </p>
-</div>
+  </mat-list-item>
+   
+</mat-list>
+<div >
+  
+<ng-container *ngFor="let item of rating">
 <mat-card>
   <mat-card-header>
-    <img mat-card-avatar src="../../../assets/img/foodimages/food2.jpg">
-    <mat-card-title>ero osamuyi</mat-card-title> 
+ 
+    <img  mat-card-avatar src="../../../../assets/img/icons/user.png" alt="" />
+    <mat-card-title> {{item.user_id}}</mat-card-title> 
+    <mat-card-subtitle>{{item.comment}}</mat-card-subtitle>
   </mat-card-header> 
-    <mat-card-content>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, perferendis?
-    </mat-card-content>
+    <!-- <mat-card-content>
+      {{item.comment}}
+    </mat-card-content> -->
 </mat-card>
-<div class="footer">
+</ng-container>
+<!-- <div class="footer">
     <mat-form-field appearance="outline">
         <mat-label>Outline form field</mat-label>
         <input matInput placeholder="Placeholder">
@@ -21,4 +30,5 @@
     <button mat-flat-button color="warn">
         <mat-icon>send</mat-icon>
     </button>
+</div> -->
 </div>

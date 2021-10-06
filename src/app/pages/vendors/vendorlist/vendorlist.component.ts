@@ -15,7 +15,8 @@ export class VendorlistComponent implements OnInit {
   isSearch:boolean = false
   Vendors : any = []
   searchVendors :any = []
-  constructor(public dialog: MatDialog,
+  constructor(
+    public dialog: MatDialog,
     private router: Router,
     private vendorSer: VendorService
   ) { 
@@ -27,7 +28,8 @@ export class VendorlistComponent implements OnInit {
    }
   becomeVendor() {
     const dialogRef = this.dialog.open(BecomeavendorComponent, {
-      width: '400px',
+      width: '500px',
+      height:'500px'
       // data: {name: this.name, animal: this.animal}
     });
 

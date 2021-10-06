@@ -49,6 +49,7 @@ export class LocationComponent implements OnInit {
   becomeVendor() {
     const dialogRef = this.dialog.open(BecomeavendorComponent, {
       width: '400px',
+      height:'500px'
     });
       dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

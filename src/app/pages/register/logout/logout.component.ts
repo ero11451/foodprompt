@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _snackBar: MatSnackBar
+  ) { }
   logOut() {
     localStorage.removeItem('user')
+    this._snackBar.open('You have successfully logout. ')
   }
   ngOnInit(){
   }

@@ -1,0 +1,90 @@
+<div class="header">
+    <div class="aline">
+      <div class="logo-border">
+        <div class="logo-white-bor"></div>
+      </div>  
+      <p class="title">Admin</p>    
+    </div> 
+  </div>
+    <div class="layout">
+        
+    <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" >
+            <input type="file" class="custom-file-input" (change)="uploadFile($event)">
+            <br><br>
+            <mat-form-field appearance="outline">
+                <mat-label>Email </mat-label>
+                <input matInput placeholder="Email" formControlName = 'email'>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Contact Email</mat-label>
+                <input matInput placeholder="contact_email" formControlName = 'contact_email'>
+            </mat-form-field> 
+            <mat-form-field appearance="outline">
+                <mat-label>Password </mat-label>
+                <input matInput placeholder="password" formControlName = 'password'>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password Confirmation </mat-label>
+                <input matInput placeholder="password" formControlName = 'password_confirmation'>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Contact Phone</mat-label>
+                <input matInput placeholder="contact_phone" formControlName = 'contact_phone'>
+            </mat-form-field> 
+            <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="phone" formControlName = 'phone'>
+            </mat-form-field> 
+            <mat-form-field appearance="outline">
+                <mat-label>Closing Time</mat-label>
+                <input matInput placeholder="closing_time" formControlName = 'closing_time'>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Class</mat-label>
+                <input matInput placeholder="contact_phone" formControlName = 'class'>
+            </mat-form-field> 
+            <mat-form-field appearance="outline">
+                <mat-label>Opening Time</mat-label>
+                <input matInput placeholder="opening_time" formControlName = 'opening_time'>
+            </mat-form-field>  
+            <mat-form-field appearance="outline">
+                <mat-label>Promo</mat-label>
+                <input matInput placeholder="promo" formControlName = 'promo'>
+            </mat-form-field>  
+                    
+            <button mat-flat-button [disabled]="vendorForm.invalid" color="warn">Create a vendor</button>
+        </form>
+
+        
+<div class="container">
+    <h1>All vendors</h1>
+    <div class="card" *ngFor="let item of [1,1,1,1]">
+        <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="">
+        <p class="text-bold mt-2 ">KFC</p>
+        <p >January 27, 2017 - 3:45 PM</p>
+        <p class="text-bold mt-2">KFC@Email.com</p>
+        <p class="address">497 Evergreen Rd. Roseville,  CA 95673</p>
+        <br>
+        <div >
+            <p class="text-bold">CLosing Time</p>
+            <p>8:15</p>
+        </div>
+
+        <div class="mt-2">
+            <p class="text-bold">Opening Time</p>
+            <p>12:5</p>
+        </div>
+        <div>
+            <p class="text-bold">Phone</p>
+            <p>908477473847</p>
+        </div>
+        <div>
+            <p class="text-bold">Class</p>
+            <p>5</p>
+        </div>
+        <button mat-flat-button class="btn" color="primary">Approve</button>
+        <button mat-stroked-button color="warn">Remove</button>
+    </div>
+</div>
+        
+    </div>

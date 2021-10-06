@@ -27,7 +27,7 @@ import { Angular4PaystackModule } from 'angular4-paystack';
     MatBadgeModule,
     MatListModule,
     MatButtonModule,
-    Angular4PaystackModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),
+    Angular4PaystackModule.forRoot('pk_test_24dc30abf9fa5926bb49fcfbeff9e33e5c659e45'),
   ],
   providers: [
     CurrencyPipe

@@ -13,7 +13,8 @@ export class VendorComponent implements OnInit {
   vendorID
   slides = []
   Vendor:any= {}
-  VendorAddrees:any = {}
+  VendorAddrees: any = {}
+  rating
   constructor(
     private router: Router,
     private ar: ActivatedRoute,
@@ -32,6 +33,7 @@ export class VendorComponent implements OnInit {
       this.Vendor = data || {}
       this.slides = data.menu
       this.VendorAddrees = data.address
+      this.rating = data.rating
       console.log(data)
     })
   }

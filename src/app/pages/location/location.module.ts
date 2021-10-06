@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,7 @@ const routes: Routes = [
     RouterModule
   ],
   imports: [
+    MatButtonModule,
     MatListModule,
     CommonModule,
     CartModule,

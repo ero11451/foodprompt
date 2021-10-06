@@ -1,14 +1,15 @@
-import { VendorService } from 'src/app/services/vendor/vendor.service';
+import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import {  HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { VendorService } from 'src/app/services/vendor/vendor.service';
 
 @Component({
-  selector: 'app-becomeavendor',
-  templateUrl: './becomeavendor.component.html',
-  styleUrls: ['./becomeavendor.component.css']
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.css']
 })
-export class BecomeavendorComponent implements OnInit {
+export class AdminComponent implements OnInit {
   data = false;    
   vendorForm: any;    
   massage: string;
@@ -20,7 +21,6 @@ export class BecomeavendorComponent implements OnInit {
   imageid 
   imagepriview 
   constructor(
-    
     private formBuilder: FormBuilder,
     private httpBackend: HttpBackend,
     private authService: VendorService
@@ -38,7 +38,6 @@ export class BecomeavendorComponent implements OnInit {
       email : ['', Validators.required, Validators.email],
       contact_email : ['', Validators.required, Validators.email],
       contact_phone: ['', [Validators.required, Validators.minLength(6)]],
-      phone: ['', [Validators.required, Validators.minLength(6)]],
       type_id : ['', [Validators.required]],
       name : ['', [Validators.required]] ,
       address_id :['', [Validators.required]],
@@ -54,11 +53,7 @@ export class BecomeavendorComponent implements OnInit {
   }
   onSubmit() {
     const user = this.vendorForm.value;
-    this.authService.becomeAvendor(user).subscribe(res => {
-      message: "New Vendor Registration Successful"
-status: "ok"
-      console.log(res)
-    })
+    this.authService.becomeAvendor(user).subscribe(res => console.log(res))
   }
    onFormSubmit(data) {    
       // this.Createemployee(user);    
@@ -98,5 +93,4 @@ status: "ok"
           // }
         });
     }
-
 }

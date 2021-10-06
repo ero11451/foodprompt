@@ -12,7 +12,7 @@
       <div>
          <p class="text-bold">{{food.name}}</p>
          <p >{{food.description}}.</p>
-         <p class="text-bold">{{food.subtotal}}</p>
+         <p class="text-bold">NGN {{food.subtotal}}</p>
       </div>
    </div>
    <div class="footer">
@@ -32,29 +32,25 @@
 <mat-card>
    <div class="footer">
      <p class="text-bold">Total</p> 
-     <p> {{ totalAmount }}</p> 
+     <p>NGN {{ totalAmount }}</p> 
    </div>
-   <button mat-flat-button *ngIf="!checkoutNow" class="btn"
+   <button mat-flat-button *ngIf="!user" class="btn"
    (click)="checkOut()"
-   color="warn" >Checkout</button>
+   color="warn" >Create an account</button>
    <ng-container >
       
-   
    <button
-   *ngIf="checkoutNow"
-   color="warn" 
-   mat-flat-button 
-   angular4-paystack
-   [key]="'pk_test_xxxxxxxxxxxxxxxxxxxxxxx'"
-   [email]="'mailexample@mail.com'"
-   [amount]="5000000"
-   [ref]="reference"
-   [class]="'btn btn-primary'"
-   (paymentInit)="paymentInit()"
-   (onClose)="paymentCancel()"
-   (callback)="paymentDone($event)"
- >Checkout
- </button>
+   *ngIf="user"
+   mat-flat-button  class="btn"
+   color="warn"
+      angular4-paystack
+      [paystackOptions]="options"
+      (paymentInit)="paymentInit()"
+      (onClose)="paymentCancel()"
+      (callback)="paymentDone($event)">
+      Pay with Paystack
+   </button>
+  
  
 </ng-container>
 </mat-card>
