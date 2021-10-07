@@ -2,6 +2,13 @@
   padding: 0px;
   margin: 0px;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+}
 .card {
   margin: 1%;
   border-radius: 10px;
@@ -9,6 +16,7 @@
   width: fit-content;
   box-shadow: 5px 5px 10px #888888;
   float: left;
+  text-align: center;
 }
 .card img {
   height: 100px;
@@ -26,7 +34,7 @@
   margin-top: 10px;
 }
 .card .address {
-  width: 80%;
+  /* width: 80%; */
 }
 .text-bold {
   font-weight: 700;

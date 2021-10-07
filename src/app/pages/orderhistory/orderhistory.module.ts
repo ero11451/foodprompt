@@ -25,6 +25,7 @@ import { HistoryComponent } from "./history/history.component";
 import { PageNotFoundComponent } from "src/app/page-not-found/page-not-found.component";
 import { CartModule } from "src/app/sharedcomponent/maincart/cart.module";
 import { DatePipe } from "@angular/common";
+import { HistoryDetailsComponent } from './history-details/history-details.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [OrderhistoryComponent, NohistoryComponent, HistoryComponent],
+  declarations: [OrderhistoryComponent, NohistoryComponent, HistoryComponent, HistoryDetailsComponent],
   exports: [OrderhistoryComponent],
   providers: [DatePipe],
   imports: [

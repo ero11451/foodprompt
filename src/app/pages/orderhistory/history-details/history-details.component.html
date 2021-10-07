@@ -1,23 +1,6 @@
-<div class="flex flex-spacebetween">
-  <div class="search">
-    <div class="input-icons">
-      <mat-icon class="fa fa-user icon">search</mat-icon>
-      <input class="input-field" placeholder="Search" type="text" />
-    </div>
-    <div class="box">
-      <select>
-        <option>Filler bt</option>
-      </select>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="card" *ngFor="let item of orders">
     <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="" />
-    <p class="text-bold mt-2" id="{{ item.status ? item.status : 'Pending' }}">
-      {{ item.status ? item.status : "Pending" }}
-    </p>
     <p
       class="text-bold mt-2"
       *ngFor="let it of item.order_item; let i = index"
@@ -30,14 +13,15 @@
     <!-- <p class="text-bold mt-2">Tea</p> -->
     <p class="address">497 Evergreen Rd. Roseville, CA 95673</p>
     <br />
-    <p class="text-bold mt-2">
-      <a routerLink="/history_details/{{ item.id }}">view</a>
+    <p class="text-bold mt-2" id="{{ item.status ? item.status : 'Pending' }}">
+      {{ item.status ? item.status : "Pending" }}
     </p>
 
-    <!-- <div *ngFor="let it of item.order_item">
+    <div *ngFor="let it of item.order_item">
       <p class="text-bold">{{ it.item.name }}</p>
       <p>{{ it.quantity }}</p>
-    </div> -->
+    </div>
+    <hr />
 
     <div class="mt-2">
       <p class="text-bold">Subtotal</p>
@@ -51,6 +35,13 @@
       <p class="text-bold">Total</p>
       <p>{{ item.total_amount }}</p>
     </div>
-    <button mat-flat-button color="primary">Reorder</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/order_history']"
+      routerLinkActive="router-link-active"
+    >
+      GO BACK
+    </button>
   </div>
 </div>
