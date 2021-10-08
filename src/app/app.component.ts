@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'transmonitor';
   loggedIn = true;
-
+  currentRoute 
+  constructor(private router: Router) {
+   
+    console.log('router', this.router.url)
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    .pipe(map(d => d))
+    .subscribe(event => 
+     {
+        this.currentRoute = event;          
+      console.log(event);
+      if (this.currentRoute.url == '/') {
+        this.loggedIn = false
+      }
+     });
+}
+    
+  
+ 
 
   user: Object = {
     firstName:"Oluyemi",

@@ -31,12 +31,12 @@
 <br>
 <mat-card>
    <div class="footer">
-     <p class="text-bold">Total</p> 
-     <p>NGN {{ totalAmount }}</p> 
+     <p class="text-bold" (click)="calulateTotal()">Total</p> 
+     <p >NGN {{ totalAmount }}</p> 
    </div>
    <button mat-flat-button *ngIf="!user" class="btn"
    (click)="checkOut()"
-   color="warn" >Create an account</button>
+   color="warn" >Check out</button>
    <ng-container >
       
    <button

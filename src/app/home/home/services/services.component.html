@@ -1,0 +1,24 @@
+<section class="service-section">
+  <h1 class="title">Loved by you, delivered by us</h1>
+
+ <div class="service-grid">
+  <div class="service-card"  *ngFor="let vendor of list">
+    <ng-container >
+        <img mat-card-image  src='../../../../assets/img/foodimages/defaultimage.png'
+        *ngIf="!vendor.image" >
+        <img  src='http://77.68.72.215/foodpt/public/{{vendor.image.path}}' 
+          *ngIf="vendor.image">
+        <mat-card-content>
+          <p class="card-title" *ngIf="vendor.name">{{vendor.name}} </p>
+          <p *ngIf="vendor.address"> 
+            {{vendor.address.house_no }} 
+            {{vendor.address.street_name}} ,
+            {{vendor.address.lga}} ,
+            {{vendor.address.state}} ,
+            {{vendor.address.country}} 
+          </p>
+        </mat-card-content>
+    </ng-container>
+ </div>
+ </div>
+</section>

@@ -3,6 +3,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../services/auth/register.service';
 
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { BecomeavendorComponent } from '../pages/vendors/becomeavendor/becomeavendor.component';
+import { RegisterComponent } from '../pages/register/register/register.component';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -31,10 +34,23 @@ export class AccountComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
+    public dialog: MatDialog,
     private authService: RegisterService
   ) {  
   }
 
+  vendor() {
+    this.dialog.open(RegisterComponent, {
+      width: '400px',
+      height: '500px'
+    })
+  }
+  register() {
+    this.dialog.open(BecomeavendorComponent,{
+      width: '400px',
+      height: '500px'
+    })
+  }
   formIN() {
     this.userForm = this.formBuilder.group({
       first_name : [ this.user.first_name, Validators.required],

@@ -1,0 +1,39 @@
+section {
+  padding: 5% 10%;
+  background-color: black;
+  color: white;
+}
+.title{
+  font-weight: 900;
+  font-size: 40px;
+  margin: 5px 0px 3% 0px;
+}
+.grid{
+
+  display: flex;
+  overflow-x: auto;
+}
+.category{
+  font-size: 30px;
+  font-weight: 900;
+  margin-right: 3%;
+  /* background: #e35b6611; */
+  /* padding: 15px; */
+  flex-shrink: 0;
+  float: left;
+}
+@media (max-width: 500px) {
+  section {
+    padding: 5% 10%;
+    height: 50%;
+  }
+  .title{
+    font-weight: 900;
+    font-size: 20px;
+    margin: 5px 0px 3% 0px;
+  }
+.category{
+  font-size: 20px;
+  margin-top: 10%;
+}
+}

@@ -3,11 +3,14 @@
     <img src="../../assets/img/image/no-account.svg" class="no-account-image" alt="" srcset="">
     
     <p>you don't have an account</p> 
-    <button  mat-flat-button type="submit" color="warn">
+    <br>
+
+    <button   mat-stroked-button type="submit" (click)="register()" class="" color="warn">
       Become a vendor
     </button>
-    <button  mat-flat-button type="submit" color="primary">
-      Become a regular user
+    <br>
+    <button  mat-flat-button type="submit" color="warn" (click)="vendor()">
+      Become a regular user  Become a vendor
     </button>
  
    </div>

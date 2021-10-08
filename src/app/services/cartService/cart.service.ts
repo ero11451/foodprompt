@@ -22,12 +22,9 @@ export class CartService {
     this.loadCart()
   }
   makeOrder(order) {
-    
     return this.http.post<any>(this.API_URL + '/orders', order)
       .pipe(map(res => {
-        if (res.statu == 200) {
-             localStorage.setItem(`orderhistory`, JSON.stringify(order));
-        } 
+         localStorage.setItem(`orderhistory`, JSON.stringify(order));
         console.log(res)
       }))
     catchError(this.handleError)

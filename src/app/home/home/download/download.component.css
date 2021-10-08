@@ -1,0 +1,51 @@
+
+.manu-container {
+  flex: 0 0 auto;
+  /* flex-shrink: 0; */
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px ;
+}
+
+.overlay {
+  position: absolute;
+  top: 8%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  transition: .5s ease;
+  background-color: black;
+  text-align: center;
+}
+
+ .overlay {
+  opacity: 0.8;
+
+}
+.overlay-text{
+  padding: 0%;
+
+}
+.title{
+  font-size: 20px;
+  font-weight: 900;
+  margin: 100px 0px 30px 0px;
+}
+.btn-white {
+  margin: 10px;
+  padding: 1% 3%;
+  font-size: 20px;
+  border: 3px solid white;
+  border-radius: 20px ;
+}

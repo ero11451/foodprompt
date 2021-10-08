@@ -9,15 +9,19 @@ import { CarticonComponent } from './carticon/carticon.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { Angular4PaystackModule } from 'angular4-paystack';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 @NgModule({
   declarations: [
     CartComponent,
-    CarticonComponent
+    CarticonComponent,
+    ReceiptComponent,
   ],
   exports: [
     CartComponent,
-    CarticonComponent
+    CarticonComponent,
+    
+    ReceiptComponent,
   ],
   imports: [
     MatDialogModule,

@@ -1,0 +1,43 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.card{
+    padding: 2%;
+    width: 300px;
+}
+.card img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+.card button{
+    width: 100%;
+    background: 
+    #2699fb;
+    margin-top: 10%;
+}
+.card div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.card .address{
+    width: 80%;
+}
+.text-bold{
+    font-weight: 700;
+}
+.mt-2{
+    margin-top: 5%;
+}
+
+.container{
+    margin-top: 1%;
+    padding-left: 1%;
+}
+
+
+
+
+

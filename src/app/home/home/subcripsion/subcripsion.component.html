@@ -1,0 +1,15 @@
+<section class="subscribe-section">
+  <div class="title"> Work with Foodprompt</div>
+  <div class="grid">
+
+  <div class="card" [class]="item.image"  *ngFor="let item of  workLIst" >
+    <div class="img"></div>
+    <div class="card-contain" [class]="item.bg">
+      <p class="card-title">{{item.title}}</p>
+      <p class="card-conter" >Become a rider and enjoy the freedom to fit work around your life. Plus great fees, perks and discounts.</p>
+      <button mat-flat-button color="primary" class="btn">{{item.btn}}</button>
+    </div>
+
+  </div>
+  </div>
+</section>

@@ -1,3 +1,4 @@
+import { HomeModule } from './home/home/home.module';
 import { MatButtonModule } from '@angular/material/button';
 import { SliderimageModule } from './sharedcomponent/sliderimage/sliderimage.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,7 +35,7 @@ import { Angular4PaystackModule } from 'angular4-paystack';
 import { CartModule } from './sharedcomponent/maincart/cart.module';
 import { ItemModule } from './pages/vendors/item/item.module';
 import { RegisterModule } from './pages/register/register.module';
-import { UpdatevendorComponent } from './account/updatevendor/updatevendor.component'
+import { UpdatevendorComponent } from './account/updatevendor/updatevendor.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { UpdatevendorComponent } from './account/updatevendor/updatevendor.compo
   ],
   imports: [
     Angular4PaystackModule.forRoot('pk_test_24dc30abf9fa5926bb49fcfbeff9e33e5c659e45'),
+    HomeModule,
     CartModule,
     ItemModule,
     BrowserModule,
