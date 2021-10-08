@@ -38,10 +38,14 @@
     <button
       mat-flat-button
       color="primary"
-      [routerLink]="['/order_history']"
-      routerLinkActive="router-link-active"
+      id="Cs"
+      angular4-paystack
+      [paystackOptions]="options"
+      (paymentInit)="paymentInit()"
+      (onClose)="paymentCancel()"
+      (callback)="paymentDone($event)"
     >
-      GO BACK
+      Re Order
     </button>
   </div>
 </div>

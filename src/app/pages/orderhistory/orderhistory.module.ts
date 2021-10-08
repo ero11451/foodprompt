@@ -25,7 +25,8 @@ import { HistoryComponent } from "./history/history.component";
 import { PageNotFoundComponent } from "src/app/page-not-found/page-not-found.component";
 import { CartModule } from "src/app/sharedcomponent/maincart/cart.module";
 import { DatePipe } from "@angular/common";
-import { HistoryDetailsComponent } from './history-details/history-details.component';
+import { HistoryDetailsComponent } from "./history-details/history-details.component";
+import { Angular4PaystackModule } from "angular4-paystack";
 
 const routes: Routes = [
   {
@@ -39,10 +40,18 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [OrderhistoryComponent, NohistoryComponent, HistoryComponent, HistoryDetailsComponent],
+  declarations: [
+    OrderhistoryComponent,
+    NohistoryComponent,
+    HistoryComponent,
+    HistoryDetailsComponent,
+  ],
   exports: [OrderhistoryComponent],
   providers: [DatePipe],
   imports: [
+    Angular4PaystackModule.forRoot(
+      "pk_test_24dc30abf9fa5926bb49fcfbeff9e33e5c659e45"
+    ),
     MatListModule,
     CartModule,
     CommonModule,

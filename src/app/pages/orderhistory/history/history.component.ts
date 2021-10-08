@@ -1,6 +1,12 @@
 import { DatePipe } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import { OrdersService } from "src/app/services/orders/orders.service";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
+import { HistoryDetailsComponent } from "../history-details/history-details.component";
 
 @Component({
   selector: "app-history",
@@ -9,8 +15,30 @@ import { OrdersService } from "src/app/services/orders/orders.service";
 })
 export class HistoryComponent implements OnInit {
   orders: any = [];
+  isViewSingleOrder: boolean = false;
+  id: any = "";
+  constructor(
+    private orderService: OrdersService,
+    public datePipe: DatePipe,
+    public dialog: MatDialog
+  ) {}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(HistoryDetailsComponent, {
+      width: "800px",
+      height: "800px",
+      data: { id: this.id },
+    });
 
-  constructor(private orderService: OrdersService, public datePipe: DatePipe) {
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+      this.getOrderHistory();
+
+      console.log("The dialog was closed");
+
+      // this.animal = result;
+    });
+  }
+  getOrderHistory() {
     this.orderService.getOrderHistory().subscribe((res: any) => {
       console.log(res.data.data);
       this.orders = res.data.data;
@@ -32,6 +60,12 @@ export class HistoryComponent implements OnInit {
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   }
-
-  ngOnInit(): void {}
+  viewItem(id) {
+    // alert(id);
+    this.id = id;
+    this.openDialog();
+  }
+  ngOnInit(): void {
+    this.getOrderHistory();
+  }
 }
