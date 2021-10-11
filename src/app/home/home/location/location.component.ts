@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LocationService } from './../../../services/location/location.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class LocationComponent implements OnInit {
   location
   constructor(
+    private router: Router,
     private locationService : LocationService
   ) { }
 
   ngOnInit() {
     this.locationService.getListoflocaion().subscribe(data => {
       this.location = data
-      console.log('location',data)
     })
   }
-
+  navTo(location) {
+   this.router.navigate(['/location/locationname',location])    
+  }
 }

@@ -2,16 +2,18 @@
 <section >
   <div class="title">
     <p > Select by location
-
-
     <mat-icon aria-hidden="false"  color="warn" aria-label="Example home icon" >location_on</mat-icon>
     </p>
+
   </div>
+  
 
   <div class="testimony-grid">
-   <div  [routerLink]="[ '/location', item.locaton ]"
+   <div 
    *ngFor="let item of location" class="category">
-   {{item.location}}
+   <p  [routerLink]="[ '/location/locationname', item.location ]">
+     {{item.location}}
+   </p>
     </div>
 
   </div>

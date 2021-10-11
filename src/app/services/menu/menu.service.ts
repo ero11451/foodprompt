@@ -31,6 +31,17 @@ export class MenuService {
         catchError(this.handleError)
       )
   }
+  getfav_menus() {
+
+    const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.token })
+    return this.http.get(this.API_URL + '/fav_menus' , { headers })
+      .pipe(map((res: any) => {
+           console.log(res)
+           return res.data || {}
+       }),
+       catchError(this.handleError)
+     )
+  }
   getMenuVendor(id) {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + this.token })
      return this.http.get(this.API_URL + '/items/'+id , { headers })

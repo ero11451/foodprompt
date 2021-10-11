@@ -3,7 +3,8 @@
 
  <div class="service-grid">
   <div class="service-card"  *ngFor="let vendor of list">
-    <ng-container >
+    <ng-container  >
+      <div [routerLink]="[ '/vendors/vedor/', vendor.id]">
         <img mat-card-image  src='../../../../assets/img/foodimages/defaultimage.png'
         *ngIf="!vendor.image" >
         <img  src='http://77.68.72.215/foodpt/public/{{vendor.image.path}}' 
@@ -18,6 +19,8 @@
             {{vendor.address.country}} 
           </p>
         </mat-card-content>
+        
+      </div>
     </ng-container>
  </div>
  </div>

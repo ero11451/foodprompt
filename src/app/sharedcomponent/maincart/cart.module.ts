@@ -20,7 +20,6 @@ import { ReceiptComponent } from './receipt/receipt.component';
   exports: [
     CartComponent,
     CarticonComponent,
-    
     ReceiptComponent,
   ],
   imports: [

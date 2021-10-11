@@ -1,3 +1,4 @@
+import { HomeModule } from './home/home/home.module';
 import { MatButtonModule } from "@angular/material/button";
 import { SliderimageModule } from "./sharedcomponent/sliderimage/sliderimage.module";
 import { BrowserModule } from "@angular/platform-browser";
@@ -37,11 +38,15 @@ import { UpdatevendorComponent } from "./account/updatevendor/updatevendor.compo
 import { DatePipe } from "@angular/common";
 
 @NgModule({
-  declarations: [AppComponent, OverviewComponent, AllPaymentsComponent],
+  declarations: [
+    AppComponent,
+    OverviewComponent,
+    AllPaymentsComponent],
   imports: [
     Angular4PaystackModule.forRoot(
       "pk_test_24dc30abf9fa5926bb49fcfbeff9e33e5c659e45"
     ),
+    HomeModule,
     CartModule,
     ItemModule,
     BrowserModule,

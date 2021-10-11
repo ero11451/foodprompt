@@ -30,11 +30,12 @@ export class LocationComponent implements OnInit {
 
   ngOnInit() {
     this.loadLocation()
-    let routerLocation = this.activeRoute.snapshot.params.locaiton
-    if (routerLocation) {
-      this.vendorSer.searchVendor(routerLocation).subscribe(data => {
-        this.Vendors = data
-        console.log(data)
+    this.routerLocation = this.activeRoute.snapshot.params.location
+    console.log(this.routerLocation)
+    if (this.routerLocation) {
+      this.vendorSer.searchVendor(this.routerLocation).subscribe(data => {
+        this.Vendors = data.filter(d => d.type == 'vendors')
+        console.log('vendor', this.Vendors)
       })
     }
   }

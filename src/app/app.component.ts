@@ -20,8 +20,10 @@ export class AppComponent {
      {
         this.currentRoute = event;          
       console.log(event);
-      if (this.currentRoute.url == '/') {
+      if (this.currentRoute.url === '/') {
         this.loggedIn = false
+      } else {
+        this.loggedIn = true
       }
      });
 }

@@ -5,7 +5,7 @@
   </div>
 
   <div class="testimony-grid">
-   <p *ngFor="let item of categories" class="category">
+   <p  [routerLink]="[ '/location/locationname', item.name ]" *ngFor="let item of categories" class="category">
      {{item.name}}
    </p>
 
