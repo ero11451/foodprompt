@@ -4,7 +4,7 @@ import { VendorService } from 'src/app/services/vendor/vendor.service';
 import { Component, OnInit } from '@angular/core';
 import { BecomeavendorComponent } from '../vendors/becomeavendor/becomeavendor.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { SearchService } from 'src/app/services/search.service';
 import { LocationService } from 'src/app/services/location/location.service';
 
@@ -14,7 +14,7 @@ import { LocationService } from 'src/app/services/location/location.service';
   styleUrls: ['./location.component.css']
 })
 export class LocationComponent implements OnInit {
-
+  routerLocation:string
   locations : any = []
   Vendors: any = []
   values
@@ -23,13 +23,20 @@ export class LocationComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private searchSer: SearchService,
-    
+    private activeRoute: ActivatedRoute,
     private vendorSer: VendorService,
     private locationService: LocationService
   ) {   }
 
   ngOnInit() {
     this.loadLocation()
+    let routerLocation = this.activeRoute.snapshot.params.locaiton
+    if (routerLocation) {
+      this.vendorSer.searchVendor(routerLocation).subscribe(data => {
+        this.Vendors = data
+        console.log(data)
+      })
+    }
   }
   navTo(vendor) {
     this.router.navigate(['/vendors/vedor', vendor.id])

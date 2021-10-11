@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card" *ngFor="let item of orders">
+    <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="" />
+    <p
+      class="text-bold mt-2"
+      *ngFor="let it of item.order_item; let i = index"
+      [attr.data-index]="i"
+    >
+      <span *ngIf="i == 0">{{ it.item.vendor.name }}</span>
+    </p>
+    <p>{{ item.created_at }}</p>
+    <br />
+    <!-- <p class="text-bold mt-2">Tea</p> -->
+    <p class="address">497 Evergreen Rd. Roseville, CA 95673</p>
+    <br />
+    <p class="text-bold mt-2" id="{{ item.status ? item.status : 'Pending' }}">
+      {{ item.status ? item.status : "Pending" }}
+    </p>
+
+    <div *ngFor="let it of item.order_item">
+      <p class="text-bold">{{ it.item.name }}</p>
+      <p>{{ it.quantity }}</p>
+    </div>
+    <hr />
+
+    <div class="mt-2">
+      <p class="text-bold">Subtotal</p>
+      <p>{{ item.total_amount + item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Delivery</p>
+      <p>{{ item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Total</p>
+      <p>{{ item.total_amount }}</p>
+    </div>
+    <button
+      mat-flat-button
+      color="primary"
+      id="Cs"
+      angular4-paystack
+      [paystackOptions]="options"
+      (paymentInit)="paymentInit()"
+      (onClose)="paymentCancel()"
+      (callback)="paymentDone($event)"
+    >
+      Re Order
+    </button>
+  </div>
+</div>

@@ -15,10 +15,6 @@ export class OrderhistoryComponent implements OnInit {
     this.getHistory()
   }
   getHistory() {
-    this.service.getOrderhistory().subscribe(data => {
-      console.log('order history', data)
-      this.orderHistory = data
-     
-    })
+    
   }
 }

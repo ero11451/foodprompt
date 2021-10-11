@@ -1,5 +1,5 @@
 
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BecomeavendorComponent } from '../becomeavendor/becomeavendor.component';
@@ -12,10 +12,13 @@ import { VendorService } from 'src/app/services/vendor/vendor.service';
 })
 export class VendorlistComponent implements OnInit {
   
+  routerVendorname: string
+
   isSearch:boolean = false
   Vendors : any = []
   searchVendors :any = []
   constructor(
+    private ar: ActivatedRoute,
     public dialog: MatDialog,
     private router: Router,
     private vendorSer: VendorService
@@ -25,7 +28,11 @@ export class VendorlistComponent implements OnInit {
 
   ngOnInit() {
     this.loadVendors()
-   }
+    
+    this.routerVendorname = this.ar.snapshot.params.location
+    console.log(this.routerVendorname)
+  }
+  
   becomeVendor() {
     const dialogRef = this.dialog.open(BecomeavendorComponent, {
       width: '500px',

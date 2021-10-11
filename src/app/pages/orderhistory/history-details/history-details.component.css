@@ -2,13 +2,22 @@
   padding: 0px;
   margin: 0px;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 400px;
+}
 .card {
-  margin: 1%;
+  /* margin: 1%; */
   border-radius: 10px;
   padding: 2%;
-  width: fit-content;
-  box-shadow: 5px 5px 10px #888888;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 5px 5px 10px #888888; */
   float: left;
+  text-align: center;
 }
 .card img {
   height: 100px;
@@ -26,7 +35,7 @@
   margin-top: 10px;
 }
 .card .address {
-  width: 80%;
+  /* width: 80%; */
 }
 .text-bold {
   font-weight: 700;
@@ -38,8 +47,6 @@
 .container {
   margin-top: 1%;
   padding-left: 1%;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .search {

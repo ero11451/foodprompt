@@ -31,7 +31,7 @@ export class FooddetailComponent implements OnInit {
     }
   }
   orderNow(data) {
-     data.portion = 1
+     data.portion = 0
     console.log('cart thi is about to be aved to the databae', data)
     this.cartService.addToCart(data) 
       

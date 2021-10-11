@@ -43,6 +43,10 @@ const routes: Routes = [
     component: VendorlistComponent,
   },
   {
+    path: 'vendorbylovation/:location', 
+    component: VendorlistComponent,
+  },
+  {
     path: 'vedor/:id', 
     component: VendorComponent,
   },

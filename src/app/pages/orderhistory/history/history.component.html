@@ -1,43 +1,101 @@
 <div class="flex flex-spacebetween">
-    <div class="search">
-      <div class="input-icons">
-         <mat-icon class="fa fa-user icon">search</mat-icon>
-         <input class="input-field" placeholder="Search" type="text">
-      </div>
-     <div class="box">
-         <select>
-           <option>Filler bt</option>
-         </select>
-       </div>
-  </div>
-   
-   </div>
-
-<div class="container">
-    <div class="card" *ngFor="let item of [1,1,1,1]">
-        <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="">
-        <p class="text-bold mt-2 ">565</p>
-        <p >January 27, 2017 - 3:45 PM</p>
-        <p class="text-bold mt-2">Tea</p>
-        <p class="address">497 Evergreen Rd. Roseville,  CA 95673</p>
-        <br>
-        <div >
-            <p class="text-bold">Black Shoes</p>
-            <p>875</p>
-        </div>
-
-        <div class="mt-2">
-            <p class="text-bold">Subtotal</p>
-            <p>875</p>
-        </div>
-        <div>
-            <p class="text-bold">Sales Tax (7.5%)</p>
-            <p>875</p>
-        </div>
-        <div>
-            <p class="text-bold">Tip</p>
-            <p>875</p>
-        </div>
-        <button mat-flat-button color="primary">Reorder</button>
+  <div class="search">
+    <div class="input-icons">
+      <mat-icon class="fa fa-user icon">search</mat-icon>
+      <input class="input-field" placeholder="Search" type="text" />
     </div>
+    <div class="box">
+      <select>
+        <option>Filler bt</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!isViewSingleOrder">
+  <div class="card" *ngFor="let item of orders">
+    <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="" />
+    <p class="text-bold mt-2" id="{{ item.status ? item.status : 'Pending' }}">
+      {{ item.status ? item.status : "Pending" }}
+    </p>
+    <p
+      class="text-bold mt-2"
+      *ngFor="let it of item.order_item; let i = index"
+      [attr.data-index]="i"
+    >
+      <span *ngIf="i == 0">{{ it.item.vendor.name }}</span>
+    </p>
+    <p>{{ item.created_at }}</p>
+    <br />
+    <!-- <p class="text-bold mt-2">Tea</p> -->
+    <p class="address">497 Evergreen Rd. Roseville, CA 95673</p>
+    <br />
+    <!-- <p class="text-bold mt-2">
+      <a routerLink="/history_details/{{ item.id }}">view</a>
+    </p> -->
+
+    <!-- <div *ngFor="let it of item.order_item">
+      <p class="text-bold">{{ it.item.name }}</p>
+      <p>{{ it.quantity }}</p>
+    </div> -->
+
+    <div class="mt-2">
+      <p class="text-bold">Subtotal</p>
+      <p>{{ item.total_amount + item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Delivery</p>
+      <p>{{ item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Total</p>
+      <p>{{ item.total_amount }}</p>
+    </div>
+    <button mat-flat-button color="primary" (click)="viewItem(item.id)">
+      View
+    </button>
+  </div>
+</div>
+<!-- Single Order view -->
+<div class="container" *ngIf="isViewSingleOrder">
+  <div class="card" *ngFor="let item of orders">
+    <img src="../../../assets/img/foodimages/food1.jpg" alt="" srcset="" />
+    <p class="text-bold mt-2" id="{{ item.status ? item.status : 'Pending' }}">
+      {{ item.status ? item.status : "Pending" }}
+    </p>
+    <p
+      class="text-bold mt-2"
+      *ngFor="let it of item.order_item; let i = index"
+      [attr.data-index]="i"
+    >
+      <span *ngIf="i == 0">{{ it.item.vendor.name }}</span>
+    </p>
+    <p>{{ item.created_at }}</p>
+    <br />
+    <!-- <p class="text-bold mt-2">Tea</p> -->
+    <p class="address">497 Evergreen Rd. Roseville, CA 95673</p>
+    <br />
+    <!-- <p class="text-bold mt-2">
+      <a routerLink="/history_details/{{ item.id }}">view</a>
+    </p> -->
+
+    <!-- <div *ngFor="let it of item.order_item">
+      <p class="text-bold">{{ it.item.name }}</p>
+      <p>{{ it.quantity }}</p>
+    </div> -->
+
+    <div class="mt-2">
+      <p class="text-bold">Subtotal</p>
+      <p>{{ item.total_amount + item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Delivery</p>
+      <p>{{ item.delivery_charge }}</p>
+    </div>
+    <div>
+      <p class="text-bold">Total</p>
+      <p>{{ item.total_amount }}</p>
+    </div>
+    <button mat-flat-button color="primary" (click)="(null)">ReOrder</button>
+  </div>
 </div>

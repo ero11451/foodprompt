@@ -9,7 +9,8 @@
   </div>
 
   <div class="testimony-grid">
-   <div *ngFor="let item of location" class="category">
+   <div  [routerLink]="[ '/location', item.locaton ]"
+   *ngFor="let item of location" class="category">
    {{item.location}}
     </div>
 

@@ -1,22 +1,23 @@
 <div class="header">
-    <div class="aline">
-      <div class="logo-border">
-        <div class="logo-white-bor"></div>
-      </div>  
-      <p class="title">Order history</p>    
+  <div class="aline">
+    <div class="logo-border">
+      <div class="logo-white-bor"></div>
     </div>
-    <div class="aline">
-      <app-carticon></app-carticon>
-      <button class="btn-red"
-       [routerLink]="['/vendors']" routerLinkActive="router-link-active" 
-      mat-stroked-button color="primary">
-        Make an order
-      </button>
-    </div>
-  
+    <p class="title">Order history</p>
+  </div>
+  <div class="aline">
+    <app-carticon></app-carticon>
+    <button
+      class="btn-red"
+      [routerLink]="['/vendors']"
+      routerLinkActive="router-link-active"
+      mat-stroked-button
+      color="primary"
+    >
+      Make an order
+    </button>
+  </div>
 </div>
 
-
-
-<app-nohistory></app-nohistory>
-<!-- <app-history></app-history> -->
+<!-- <app-nohistory></app-nohistory> -->
+<app-history></app-history>

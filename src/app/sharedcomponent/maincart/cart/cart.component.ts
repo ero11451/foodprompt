@@ -125,6 +125,7 @@ export class CartComponent implements OnInit {
   }
  
   checkOut() {
+    
     this.paymentsService.paymentInit()
     let user = localStorage.getItem('user')
     if (!user) {
@@ -133,6 +134,7 @@ export class CartComponent implements OnInit {
         width: '400px'
       })    
     } else {
+      this.options.amount = this.totalAmount * 100
       this.paymentsService.paymentInit()
       this.checkoutNow = true
     }
